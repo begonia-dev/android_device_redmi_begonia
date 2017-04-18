@@ -154,4 +154,4 @@ SYSTEM_EXT_PUBLIC_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/public
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 
 # Inherit from the proprietary version
--include vendor/redmi/begonia/BoardConfigVendor.mk
+include vendor/redmi/begonia/BoardConfigVendor.mk
