@@ -7,6 +7,9 @@ endif
 PRODUCT_PROPERTY_OVERRIDES +=  \
     aaudio.mmap_exclusive_policy=2 \
     aaudio.mmap_policy=2 \
+    af.fast_track_multiplier=1 \
+    audio.adm.buffering.ms=3 \
+    audio_hal.period_multiplier=2 \
     dalvik.vm.dex2oat64.enabled=true \
     dalvik.vm.mtk-stack-trace-file=/data/anr/mtk_traces.txt \
     debug.mediatek.disp_decompress=1 \
@@ -422,6 +425,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.vendor.wlan.gen=gen4m \
     telephony.active_modems.max_count=2 \
     telephony.lteOnCdmaDevice=1 \
+    vendor.audio.adm.buffering.ms=3 \
     vendor.bluetooth.ldac.abr=true \
     vendor.camera.mdp.cz.enable=1 \
     vendor.camera.mdp.dre.enable=1 \
