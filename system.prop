@@ -17,6 +17,8 @@ ro.camera.sensor.highres.0=[[9248:6936:33:0],[9280:6944:32:1]]
 ro.camera.sensor.highres.1=[[5184:3880:33:0],[5184:2920:33:0],[5184:2392:33:0],[3888:3888:33:0]]
 ro.camera.sensor.highres.0.max=9280:6944
 ro.camera.sound.forced=0
+persist.camera.HAL3.enabled=1
+persist.camera.eis.enabled=1
 persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera,com.google.camera
 
 # Charger
