@@ -336,6 +336,10 @@
     <!-- Should the pinner service pin the Camera application? -->
     <bool name="config_pinnerCameraApp">true</bool>
 
+
+    <!-- Enable Zram writeback feature to allow unused pages in zram be written to flash. -->
+    <bool name="config_zramWriteback">true</bool>
+
     <!-- List of files pinned by the Pinner Service with the apex boot image b/119800099 -->
     <string-array translatable="false" name="config_apexBootImagePinnerServiceFiles">
         <item>/system/framework/framework.jar</item>
