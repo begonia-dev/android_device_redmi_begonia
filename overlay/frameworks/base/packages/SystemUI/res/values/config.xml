@@ -31,4 +31,9 @@
 
     <!-- FPSInfo -->
     <string name="config_fpsInfoSysNode" translatable="false">/sys/module/primary_display/parameters/display_framerate_main</string>
+
+    <!-- Should we vibrate on an icon animation of the shelf. This should only be active if the
+         vibrator is capable of subtle vibrations -->
+    <bool name="config_vibrateOnIconAnimation">true</bool>
+
 </resources>
