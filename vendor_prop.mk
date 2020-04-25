@@ -9,6 +9,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     aaudio.mmap_exclusive_policy=2 \
     aaudio.mmap_policy=2 \
     bsp.mishow.ctl=true \
+    dalvik.vm.dex2oat64.enabled=true \
     dalvik.vm.mtk-stack-trace-file=/data/anr/mtk_traces.txt \
     debug.mediatek.disp_decompress=1 \
     debug.mediatek.game_pq_enable=1 \
