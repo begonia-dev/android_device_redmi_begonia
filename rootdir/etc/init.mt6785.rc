@@ -39,7 +39,6 @@ on init
     write /dev/cpuset/system-background/cpus 0-5
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/top-app/boost/cpus 6-7
-    chown system system /dev/input/event2
 
 on late-init
     write /proc/bootprof "INIT:late-init"
@@ -971,3 +970,9 @@ on property:ro.boot.product.hardware.sku=begonia
 # Disable AOSP RIL if MTK RIL is up
 on property:vendor.ril.mtk=1
     stop vendor.ril-daemon
+
+on property:persist.sys.begonia.dt2w=0
+    exec /system/bin/sendevent /dev/input/event2 0 1 4
+
+on property:persist.sys.begonia.dt2w=1
+    exec /system/bin/sendevent /dev/input/event2 0 1 5
