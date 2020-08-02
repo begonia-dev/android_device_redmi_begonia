@@ -1,2 +1,0 @@
-allow kernel debugfs_mmc:dir search;
-allow kernel self:system module_request;

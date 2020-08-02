@@ -1,3 +1,0 @@
-allow nvram_agent_binder proc_cmdline:file r_file_perms;
-allow nvram_agent_binder sysfs_dt_firmware_android:dir r_dir_perms;
-allow nvram_agent_binder sysfs_dt_firmware_android:file r_file_perms;

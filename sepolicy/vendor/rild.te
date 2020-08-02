@@ -1,7 +1,0 @@
-get_prop(rild, telephony_prop)
-set_prop(rild, telephony_prop)
-get_prop(rild, logmuch_prop)
-get_prop(rild, vendor_system_prop)
-set_prop(rild, deviceid_prop)
-
-allow rild nvram_agent_binder_hwservice:hwservice_manager find;

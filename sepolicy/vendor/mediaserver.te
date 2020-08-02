@@ -1,3 +1,0 @@
-allow mediaserver debugfs_ion:dir search;
-
-get_prop(mediaserver, vendor_audio_prop)

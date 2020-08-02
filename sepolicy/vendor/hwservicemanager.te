@@ -1,2 +1,0 @@
-allow hwservicemanager vpud_native:binder { call transfer };
-allow hwservicemanager hal_displayfeature_xiaomi_default:binder transfer;
