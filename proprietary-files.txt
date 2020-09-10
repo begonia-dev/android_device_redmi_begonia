@@ -878,7 +878,6 @@ vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
 vendor/etc/media_codecs_mediatek_audio.xml
 vendor/etc/media_codecs_mediatek_video.xml
 vendor/etc/permissions/com.mediatek.hardware.vow.xml
-vendor/etc/vintf/manifest/vendor.mediatek.hardware.dplanner@2.0-service.xml
 vendor/lib/hw/android.hardware.audio@5.0-impl-mediatek.so
 vendor/lib/hw/vendor.mediatek.hardware.camera.atms@1.0-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so
@@ -1093,48 +1092,6 @@ vendor/lib64/vendor.mediatek.hardware.radio_op@2.0.so
 vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 vendor/lib64/vendor.mediatek.hardware.wifi.supplicant@2.0.so
 vendor/lib64/vendor.mediatek.hardware.wifi.supplicant@2.1.so
-
-# MTK-IMS
--framework/mediatek-common.jar
--framework/mediatek-framework.jar
--framework/mediatek-ims-base.jar
--framework/mediatek-ims-common.jar
--framework/mediatek-telecom-common.jar
--framework/mediatek-telephony-base.jar
--framework/mediatek-telephony-common.jar
--priv-app/ImsService/ImsService.apk
-bin/vtservice
-etc/init/init.vtservice.rc
-framework/mediatek-ims-extension-plugin.jar
-framework/mediatek-ims-legacy.jar
-framework/mediatek-ims-wwop-common.jar
-lib/libcomutils.so
-lib/libimsma.so
-lib/libimsma_adapt.so
-lib/libimsma_rtp.so
-lib/libimsma_socketwrapper.so
-lib/libmtk_vt_service.so
-lib/libmtk_vt_wrapper.so
-lib/libmtkaudio_utils.so
-lib/libmtkavenhancements.so
-lib/libmtklimiter.so
-lib/libmtkperf_client.so
-lib/libmtkshifter.so
-lib/libsignal.so
-lib/libsink.so
-lib/libsource.so
-lib/libvcodec_cap.so
-lib/libvcodec_capenc.so
-lib/libvt_avsync.so
-lib64/libmtk_serialnum.so
-lib64/libmtk_vt_wrapper.so
-lib64/libmtkaudio_utils.so
-lib64/libmtkavenhancements.so
-lib64/libmtklimiter.so
-lib64/libmtkperf_client.so
-lib64/libmtkshifter.so
-lib64/libvcodec_cap.so
-lib64/libvcodec_capenc.so
 
 # NFC
 vendor/bin/pnscr|8b1679a6577cc98939284021ba74aab8c7808bcd
@@ -1403,8 +1360,6 @@ vendor/bin/nvram_daemon
 vendor/bin/wlan_assistant
 vendor/bin/wmt_launcher
 vendor/bin/wmt_loader
-vendor/etc/init/aee_aedv.rc
-vendor/etc/init/aee_aedv64.rc
 vendor/etc/init/microtrust.rc
 vendor/etc/init/nvram_daemon.rc
 vendor/etc/init/vendor.microtrust.hardware.capi@2.0-service.rc
@@ -1417,11 +1372,6 @@ vendor/etc/stereo.wav
 vendor/fstab.enableswap
 
 # Misc
-vendor/bin/aeev
-vendor/bin/aee_aedv
-vendor/bin/aee_aedv64
-vendor/bin/aee_archivev
-vendor/bin/aee_dumpstatev
 vendor/bin/atcid
 vendor/bin/atci_service
 vendor/bin/audiocmdservice_atci
@@ -2045,7 +1995,6 @@ vendor/lib/libispcameraca.so
 vendor/lib/libjpeg-alpha-oal_vendor.so
 vendor/lib/libjpeg-alpha_vendor.so
 vendor/lib/libJpgEncPipe.so
-vendor/lib/libladder.so
 vendor/lib/liblogwrap_vendor.so
 vendor/lib/libminiui.so
 vendor/lib/libmisound.so
@@ -2088,7 +2037,6 @@ vendor/lib/libtflite_mtk.so
 vendor/lib/libtflite_mtk_static.so
 vendor/lib/libthha.so
 vendor/lib/libtlcWidevineModularDrm.so
-vendor/lib/libudf.so
 vendor/lib/liburee_meta_drmkeyinstall.so
 vendor/lib/libvc1dec_sa.ca7.so
 vendor/lib/libvcodecdrv.so
@@ -2246,7 +2194,6 @@ vendor/lib64/libjpeg-alpha_vendor.so
 vendor/lib64/libJpgEncPipe.so
 vendor/lib64/libkmsetkey.so
 vendor/lib64/libksensor.so
-vendor/lib64/libladder.so
 vendor/lib64/liblogwrap_vendor.so
 vendor/lib64/liblpcnr.so
 vendor/lib64/libmfllcore.so
@@ -2290,7 +2237,6 @@ vendor/lib64/libtflite_mtk.so
 vendor/lib64/libtflite_mtk_static.so
 vendor/lib64/libthha.so
 vendor/lib64/libtlcWidevineModularDrm.so
-vendor/lib64/libudf.so
 vendor/lib64/liburee_meta_drmkeyinstall.so
 vendor/lib64/libvcodec_oal.so
 vendor/lib64/libverno.so

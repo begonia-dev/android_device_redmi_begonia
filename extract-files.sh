@@ -59,6 +59,42 @@ function blob_fixup() {
     *.rc)
         sed -i "s/vendor\/lib\/modules\//vendor\/lib\/modules_prebuilt\//g" ${2}
         ;;
+    vendor/lib/hw/android.hardware.keymaster@3.0-impl.so)
+        patchelf --replace-needed libkeymaster_portable.so libkeymaster_portable-v29.so ${2}
+        patchelf --replace-needed libsoftkeymasterdevice.so libsoftkeymasterdevice-v29.so ${2}
+        patchelf --replace-needed libpuresoftkeymasterdevice.so libpuresoftkeymasterdevice-v29.so ${2}
+        ;;
+    vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so)
+        patchelf --replace-needed libkeymaster_portable.so libkeymaster_portable-v29.so ${2}
+        patchelf --replace-needed libsoftkeymasterdevice.so libsoftkeymasterdevice-v29.so ${2}
+        patchelf --replace-needed libpuresoftkeymasterdevice.so libpuresoftkeymasterdevice-v29.so ${2}
+        ;;
+    vendor/lib/libkeymaster3device.so)
+        patchelf --replace-needed libkeymaster_portable.so libkeymaster_portable-v29.so ${2}
+        patchelf --replace-needed libsoftkeymasterdevice.so libsoftkeymasterdevice-v29.so ${2}
+        patchelf --replace-needed libpuresoftkeymasterdevice.so libpuresoftkeymasterdevice-v29.so ${2}
+        ;;
+    vendor/lib64/libkeymaster3device.so)
+        patchelf --replace-needed libkeymaster_portable.so libkeymaster_portable-v29.so ${2}
+        patchelf --replace-needed libsoftkeymasterdevice.so libsoftkeymasterdevice-v29.so ${2}
+        patchelf --replace-needed libpuresoftkeymasterdevice.so libpuresoftkeymasterdevice-v29.so ${2}
+        ;;
+    vendor/lib64/hw/audio.primary.mt6785.so)
+        patchelf --replace-needed libmedia_helper.so libmedia_helper-v29.so ${2}
+        ;;
+    vendor/lib/hw/audio.primary.mt6785.so)
+        patchelf --replace-needed libmedia_helper.so libmedia_helper-v29.so ${2}
+        ;;
+    vendor/lib64/vendor.mediatek.hardware.audio@5.1.so)
+        patchelf --replace-needed android.hardware.audio@5.0.so android.hardware.audio@5.0-v29.so ${2}
+        patchelf --replace-needed android.hardware.audio.common@5.0.so android.hardware.audio.common@5.0-v29.so ${2}
+        patchelf --replace-needed android.hardware.audio.effect@5.0.so android.hardware.audio.effect@5.0-v29.so ${2}
+	;;
+    vendor/lib/vendor.mediatek.hardware.audio@5.1.so)
+        patchelf --replace-needed android.hardware.audio@5.0.so android.hardware.audio@5.0-v29.so ${2}
+        patchelf --replace-needed android.hardware.audio.common@5.0.so android.hardware.audio.common@5.0-v29.so ${2}
+        patchelf --replace-needed android.hardware.audio.effect@5.0.so android.hardware.audio.effect@5.0-v29.so ${2}
+	;;
     esac
 }
 
