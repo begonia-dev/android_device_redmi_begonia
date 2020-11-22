@@ -14,11 +14,8 @@ ro.xiaomi.bl.poll=true
 
 ro.netflix.bsp_rev=MTK6785-18758-1
 
-#
-# from device/mediatek/mt6785/common_ro.prop
-#
-# For common ro override property
-
+# Camera
+persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera,com.google.camera
 
 #
 # from device/mediatek/system/common/system.prop
