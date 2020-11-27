@@ -342,6 +342,12 @@ PRODUCT_BOOT_JARS += \
     mediatek-telephony-base \
     mediatek-telephony-common
 
+# RCS
+PRODUCT_PACKAGES += \
+    com.android.ims.rcsmanager \
+    PresencePolling \
+    RcsService
+
 # Video Telephony
 PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.videotelephony@1.0
