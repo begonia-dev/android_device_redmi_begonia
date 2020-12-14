@@ -1,3 +1,6 @@
+# Purpose: Allow to init /proc/last_kmsg
+allow init proc_last_kmsg:file { r_file_perms setattr };
+
 allow init hwservicemanager:binder call;
 
 allow init self:netlink_kobject_uevent_socket read;
