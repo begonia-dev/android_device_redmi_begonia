@@ -152,6 +152,7 @@ BOARD_VNDK_RUNTIME_DISABLE := true
 
 # Sepolicy
 include device/mediatek/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Inherit from the proprietary version
 -include vendor/redmi/begonia/BoardConfigVendor.mk
