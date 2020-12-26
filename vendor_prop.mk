@@ -273,7 +273,6 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     persist.log.tag.hwcomposer=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.netd=$(VENDOR_LOG_LEVEL) \
     persist.radio.multisim.config=dsds \
-    persist.sys.mcd_config_file=/system/etc/mcd_default.conf \
     persist.vendor.audio.button_jack.profile=volume \
     persist.vendor.audio.button_jack.switch=0 \
     persist.vendor.camera3.operationMode.superNightMode=0x800A \

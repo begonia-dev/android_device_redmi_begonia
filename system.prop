@@ -123,8 +123,6 @@ sys.displayfeature_hidl=true
 # displayfeature and displayfeatureservice use it to debug pq effect
 sys.displayfeature.entry.enable=true
 
-persist.sys.mcd_config_file=/system/etc/mcd_default.conf
-
 #quick charge type detect
 persist.vendor.quick.charge=1
 
