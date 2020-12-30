@@ -85,16 +85,6 @@ function blob_fixup() {
     vendor/lib/hw/audio.primary.mt6785.so)
         patchelf --replace-needed libmedia_helper.so libmedia_helper-v29.so ${2}
         ;;
-    vendor/lib64/vendor.mediatek.hardware.audio@5.1.so)
-        patchelf --replace-needed android.hardware.audio@5.0.so android.hardware.audio@5.0-v29.so ${2}
-        patchelf --replace-needed android.hardware.audio.common@5.0.so android.hardware.audio.common@5.0-v29.so ${2}
-        patchelf --replace-needed android.hardware.audio.effect@5.0.so android.hardware.audio.effect@5.0-v29.so ${2}
-	;;
-    vendor/lib/vendor.mediatek.hardware.audio@5.1.so)
-        patchelf --replace-needed android.hardware.audio@5.0.so android.hardware.audio@5.0-v29.so ${2}
-        patchelf --replace-needed android.hardware.audio.common@5.0.so android.hardware.audio.common@5.0-v29.so ${2}
-        patchelf --replace-needed android.hardware.audio.effect@5.0.so android.hardware.audio.effect@5.0-v29.so ${2}
-	;;
     esac
 }
 

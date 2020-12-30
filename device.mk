@@ -40,6 +40,13 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
+# Audio
+PRODUCT_PACKAGES += \
+    libaudioprimarydevicehalifclient \
+    vendor.mediatek.hardware.audio@5.1 \
+    android.hardware.audio@5.0-impl-mediatek \
+    android.hardware.audio@5.0-service-mediatek
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     libldacBT_dec \
@@ -325,7 +332,8 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor \
     libhidltransport \
-    libhidltransport.vendor
+    libhidltransport.vendor \
+    libhidlbase
 
 PRODUCT_PACKAGES += \
     libladder \
