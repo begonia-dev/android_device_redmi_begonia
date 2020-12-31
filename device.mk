@@ -7,6 +7,9 @@
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
+# MTK-OSS
+$(call inherit-product, vendor/mediatek/opensource/mtk-oss.mk)
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.effect@5.0-impl \
@@ -39,13 +42,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
-
-# Audio
-PRODUCT_PACKAGES += \
-    libaudioprimarydevicehalifclient \
-    vendor.mediatek.hardware.audio@5.1 \
-    android.hardware.audio@5.0-impl-mediatek \
-    android.hardware.audio@5.0-service-mediatek
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -334,10 +330,6 @@ PRODUCT_PACKAGES += \
     libhidltransport \
     libhidltransport.vendor \
     libhidlbase
-
-PRODUCT_PACKAGES += \
-    libladder \
-    libudf
 
 # Inherit vendor
 $(call inherit-product, vendor/redmi/begonia/begonia-vendor.mk)
