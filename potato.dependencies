@@ -7,5 +7,19 @@
   {
     "repository" : "vendor_redmi_begonia",
     "target_path": "vendor/redmi/begonia"
+  },
+  {
+    "repository" : "vendor_mediatek_opensource",
+    "target_path": "vendor/mediatek/opensource"
+  },
+  {
+    "repository" : "PixelExperience/vendor_mediatek_interfaces",
+    "target_path": "vendor/mediatek/interfaces",
+    "branch"     : "eleven"
+  },
+  {
+    "repository" : "PixelExperience/vendor_mediatek_ims",
+    "target_path": "vendor/mediatek/ims",
+    "branch"     : "eleven"
   }
 ]
