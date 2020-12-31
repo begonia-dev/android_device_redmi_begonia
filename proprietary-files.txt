@@ -918,7 +918,6 @@ vendor/lib/libMtkOmxGsmDec.so
 vendor/lib/libMtkOmxMp3Dec.so
 vendor/lib/libMtkOmxVdecEx.so
 vendor/lib/libMtkOmxVenc.so
-vendor/lib/libmtkperf_client_vendor.so
 vendor/lib/libmtkproperty.so
 vendor/lib/libmtkrillog.so
 vendor/lib/libmtkshifter_vendor.so
@@ -1027,7 +1026,6 @@ vendor/lib64/libmtklimiter_vendor.so
 vendor/lib64/libmtknetcap.so
 vendor/lib64/libmtknetutils.so
 vendor/lib64/libMtkOmxCore.so
-vendor/lib64/libmtkperf_client_vendor.so
 vendor/lib64/libmtkproperty.so
 vendor/lib64/libmtkrillog.so
 vendor/lib64/libmtkrilutils.so
@@ -1143,8 +1141,6 @@ vendor/etc/init/android.hardware.neuralnetworks@1.1-service-gpunn.rc
 vendor/etc/init/android.hardware.neuralnetworks@1.1-service-neuron-ann.rc
 
 # Power (Hardware)
-vendor/bin/hw/power_legacy_test_v_1_0
-vendor/bin/hw/power_native_test_v_1_0
 vendor/etc/powercontable.xml
 vendor/etc/powerscntbl.xml
 vendor/etc/power_whitelist_cfg.xml
@@ -1152,34 +1148,6 @@ vendor/lib/hw/power.default.so
 vendor/lib/hw/power.mt6785.so
 vendor/lib64/hw/power.default.so
 vendor/lib64/hw/power.mt6785.so
-
-# Power (Interfaces - mtkpower)
-vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service
-vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-init.rc
-vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc
-vendor/lib/hw/vendor.mediatek.hardware.mtkpower@1.0-impl.so
-vendor/lib/vendor.mediatek.hardware.mtkpower@1.0.so
-vendor/lib64/hw/vendor.mediatek.hardware.mtkpower@1.0-impl.so
-vendor/lib64/vendor.mediatek.hardware.mtkpower@1.0.so
-
-# Power (Interfaces - android)
-vendor/lib/hw/android.hardware.power@1.3-impl-mediatek.so
-vendor/lib64/hw/android.hardware.power@1.3-impl-mediatek.so
-
-# Power (Interfaces - vendor.mediatek)
-vendor/lib/hw/vendor.mediatek.hardware.power@2.1-impl.so
-vendor/lib/vendor.mediatek.hardware.power@2.0.so
-vendor/lib/vendor.mediatek.hardware.power@2.1.so
-vendor/lib64/hw/vendor.mediatek.hardware.power@2.1-impl.so
-vendor/lib64/vendor.mediatek.hardware.power@1.1.so
-vendor/lib64/vendor.mediatek.hardware.power@2.0.so
-vendor/lib64/vendor.mediatek.hardware.power@2.1.so
-
-# Power (Libraries)
-vendor/lib/libpowerhal.so
-vendor/lib/libpowerhalwrap_vendor.so
-vendor/lib64/libpowerhal.so
-vendor/lib64/libpowerhalwrap_vendor.so
 
 # Radio
 vendor/lib/libvsim.so
