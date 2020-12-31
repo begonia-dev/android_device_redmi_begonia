@@ -328,5 +328,8 @@ PRODUCT_PACKAGES += \
     libhidltransport.vendor \
     libhidlbase
 
+# MediaTek IMS
+$(call inherit-product, vendor/mediatek/ims/mtk-ims.mk)
+
 # Inherit vendor
 $(call inherit-product, vendor/redmi/begonia/begonia-vendor.mk)
