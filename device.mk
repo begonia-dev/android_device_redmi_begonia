@@ -328,6 +328,20 @@ PRODUCT_PACKAGES += \
     libhidltransport.vendor \
     libhidlbase
 
+# MTK Jars (for IMS)
+PRODUCT_BOOT_JARS += \
+    mediatek-common \
+    mediatek-framework \
+    mediatek-ims-base \
+    mediatek-ims-common \
+    mediatek-telecom-common \
+    mediatek-telephony-base \
+    mediatek-telephony-common
+
+# Video Telephony
+PRODUCT_PACKAGES += \
+    vendor.mediatek.hardware.videotelephony@1.0
+
 # MediaTek IMS
 $(call inherit-product, vendor/mediatek/ims/mtk-ims.mk)
 

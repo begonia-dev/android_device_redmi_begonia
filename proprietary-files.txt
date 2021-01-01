@@ -842,6 +842,34 @@ vendor/lib64/libkeystore-wifi-hidl.so
 vendor/lib/hw/sound_trigger.primary.mt6785.so
 vendor/lib64/hw/sound_trigger.primary.mt6785.so
 
+# MTK-IMS
+-framework/mediatek-common.jar
+-framework/mediatek-framework.jar
+-framework/mediatek-ims-base.jar
+-framework/mediatek-ims-common.jar
+-framework/mediatek-telecom-common.jar
+-framework/mediatek-telephony-base.jar
+-framework/mediatek-telephony-common.jar
+-framework/mediatek-ims-extension-plugin.jar
+-framework/mediatek-ims-legacy.jar
+-framework/mediatek-ims-wwop-common.jar
+-priv-app/ImsService/ImsService.apk
+bin/vtservice
+etc/init/init.vtservice.rc
+lib/libmtk_vt_service.so
+lib/libmtk_vt_wrapper.so
+lib/libmtkaudio_utils.so
+lib/libmtkavenhancements.so
+lib/libmtklimiter.so
+lib/libmtkperf_client.so
+lib/libmtkshifter.so
+lib64/libmtk_vt_wrapper.so
+lib64/libmtkaudio_utils.so
+lib64/libmtkavenhancements.so
+lib64/libmtklimiter.so
+lib64/libmtkperf_client.so
+lib64/libmtkshifter.so
+
 # Media-Hardware
 vendor/lib/libstagefrighthw.so
 vendor/lib64/libstagefrighthw.so
