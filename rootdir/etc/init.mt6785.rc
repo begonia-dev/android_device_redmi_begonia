@@ -1114,12 +1114,6 @@ service charger /bin/charger
     group system graphics
     seclabel u:r:healthd:s0
 
-on property:persist.sys.begonia.dt2w=0
-    exec /bin/sendevent /dev/input/event2 0 1 4
-
-on property:persist.sys.begonia.dt2w=1
-    exec /bin/sendevent /dev/input/event2 0 1 5
-
 # Disable AOSP RIL if MTK RIL is up
 on property:vendor.ril.mtk=1
     stop vendor.ril-daemon
