@@ -320,7 +320,6 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     persist.vendor.vilte_support=1 \
     persist.vendor.viwifi_support=1 \
     persist.vendor.volte_support=1 \
-    ro.apex.updatable=false \
     ro.carrier=unknown \
     ro.config.alarm_alert=Alarm_Classic.ogg \
     ro.config.media_vol_default=10 \
