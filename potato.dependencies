@@ -13,9 +13,8 @@
     "target_path": "vendor/mediatek/opensource"
   },
   {
-    "repository" : "PixelExperience/vendor_mediatek_interfaces",
-    "target_path": "vendor/mediatek/interfaces",
-    "branch"     : "eleven"
+    "repository" : "vendor_mediatek_interfaces",
+    "target_path": "vendor/mediatek/interfaces"
   },
   {
     "repository" : "PixelExperience/vendor_mediatek_ims",
