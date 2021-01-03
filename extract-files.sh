@@ -105,7 +105,11 @@ function blob_fixup() {
         ;&
     vendor/bin/hw/wpa_supplicant)
         patchelf --add-needed libcompiler_rt.so ${2}
-        ;&
+        ;;
+    vendor/lib64/libarmnn.so)
+        patchelf --add-needed libunwindstack.so ${2}
+        ;;
+
     esac
 }
 
