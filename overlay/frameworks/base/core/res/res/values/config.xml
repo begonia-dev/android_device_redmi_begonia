@@ -463,4 +463,7 @@
         <item>0:2:15</item>
     </string-array>
 
+    <bool name="config_proximityCheckOnWake">true</bool>
+    <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
+
 </resources>
