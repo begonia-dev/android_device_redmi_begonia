@@ -17,7 +17,7 @@
     "target_path": "vendor/mediatek/interfaces"
   },
   {
-    "repository" : "PixelExperience/vendor_mediatek_ims",
+    "repository" : "Descendant-Devices/vendor_mediatek_ims",
     "target_path": "vendor/mediatek/ims",
     "branch"     : "eleven"
   }
