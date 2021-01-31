@@ -213,6 +213,10 @@ PRODUCT_PACKAGES += \
     fstab.mt6785 \
     ueventd.mtk.rc
 
+# Ramdisk for kernel
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/fstab.mt6785:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6785
+
 # RenderScript
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
