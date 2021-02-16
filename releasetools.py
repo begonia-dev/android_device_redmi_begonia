@@ -57,16 +57,23 @@ def Firmware_Images(info, incremental):
       'gz': ['gz1', 'gz2'],
       'lk': ['lk', 'lk2'],
       'md1img': ['md1img'],
-      'preloader_ufs': ['preloader_a', 'preloader_b'],
       'scp': ['scp1', 'scp2'],
       'spmfw': ['spmfw'],
       'sspm': ['sspm_1', 'sspm_2'],
       'tee': ['tee1', 'tee2']
       }
 
+  pl = 'preloader_ufs'
+  pl_part = ['sda', 'sdb']
 
   fw_cmd = 'ifelse(getprop("ro.boot.hwc") == "India",\n(\n'
   fw_cmd += 'ui_print("Flashing begoniain (Indian) firmware...");\n'
+
+  # Flash Indian Firmware
+  AddImageOnly(info, "{}_in.img".format(pl), incremental, True)
+  for part in pl_part:
+      fw_cmd += 'package_extract_file("{}_in.img", "/dev/block/{}");\n'.format(pl, part)
+
   for img in img_map.keys():
     AddImageOnly(info, '{}_in.img'.format(img), incremental, True)
     for part in img_map[img]:
@@ -76,9 +83,15 @@ def Firmware_Images(info, incremental):
     AddImageOnly(info, '{}_in.bin'.format(_bin), incremental, True)
     for part in bin_map[_bin]:
       fw_cmd += 'package_extract_file("{}_in.bin", "/dev/block/bootdevice/by-name/{}");\n'.format(_bin, part)
+  # END Flash Indian Firmware
 
   fw_cmd += '),\n(\n'
   fw_cmd += 'ui_print("Flashing begonia (Global) firmware...");\n'
+
+  # Flash Global Firmware
+  AddImageOnly(info, "{}.img".format(pl), incremental, True)
+  for part in pl_part:
+      fw_cmd += 'package_extract_file("{}.img", "/dev/block/{}");\n'.format(pl, part)
 
   for img in img_map.keys():
     AddImageOnly(info, '{}.img'.format(img), incremental, True)
@@ -89,5 +102,7 @@ def Firmware_Images(info, incremental):
     AddImageOnly(info, '{}.bin'.format(_bin), incremental, True)
     for part in bin_map[_bin]:
       fw_cmd += 'package_extract_file("{}.bin", "/dev/block/bootdevice/by-name/{}");\n'.format(_bin, part)
+  # END Flash Global Firmware
+
   fw_cmd += ')\n);'
   info.script.AppendExtra(fw_cmd)
