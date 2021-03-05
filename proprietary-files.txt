@@ -1350,7 +1350,6 @@ vendor/bin/wfca
 vendor/bin/xcap
 vendor/data/misc/ProjectConfig.mk
 vendor/etc/.tp/.ht120.mtc
-vendor/etc/aee-config
 vendor/etc/agps_profiles_conf2.xml
 vendor/etc/apdb/APDB_MT6785_S01__W1943
 vendor/etc/apdb/APDB_MT6785_S01__W1943_ENUM

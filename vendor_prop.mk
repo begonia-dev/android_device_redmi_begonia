@@ -346,7 +346,6 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.vendor.audio.voice.volume.boost=manual \
     ro.vendor.camera3.zsl.default=140 \
     ro.vendor.connsys.dedicated.log=1 \
-    ro.vendor.have_aeev_feature=1 \
     ro.vendor.jpeg_decode_sw_opt=1 \
     ro.vendor.md_auto_setup_ims=1 \
     ro.vendor.md_log_memdump_wait=15 \
