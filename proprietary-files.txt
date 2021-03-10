@@ -1278,7 +1278,7 @@ vendor/bin/wmt_loader
 vendor/etc/init/microtrust.rc
 vendor/etc/init/nvram_daemon.rc
 vendor/etc/init/vendor.microtrust.hardware.capi@2.0-service.rc
-vendor/etc/init_panel_info.sh
+vendor/etc/init_panel_info.sh|aec4f25dd4b61557f12bb574f7f3bff647b30736
 vendor/etc/partition_permission.sh
 vendor/fstab.enableswap
 
