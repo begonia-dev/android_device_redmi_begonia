@@ -433,6 +433,21 @@
         <item>35</item>
     </integer-array>
 
+    <!-- The default intensity level for haptic feedback. See
+         Settings.System.HAPTIC_FEEDBACK_INTENSITY more details on the constant values and
+         meanings. -->
+    <integer name="config_defaultHapticFeedbackIntensity">2</integer>
+
+    <!-- The default intensity level for notification vibrations. See
+         Settings.System.NOTIFICATION_VIBRATION_INTENSITY more details on the constant values and
+         meanings. -->
+    <integer name="config_defaultNotificationVibrationIntensity">3</integer>
+
+    <!-- The default intensity level for notification vibrations. See
+         Settings.System.RING_VIBRATION_INTENSITY more details on the constant values and
+         meanings. -->
+    <integer name="config_defaultRingVibrationIntensity">3</integer>
+
     <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
          when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
          where: IDs are unique per device, Modality as defined in BiometricAuthenticator.java,
