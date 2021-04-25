@@ -89,7 +89,9 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service \
     libdrm.vendor \
     libvulkan \
-    libfmq.vendor
+    libfmq.vendor \
+    libhwc2on1adapter \
+    libhwc2onfbadapter
 
 PRODUCT_PACKAGES += \
     disable_configstore
