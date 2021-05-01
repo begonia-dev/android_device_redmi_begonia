@@ -380,6 +380,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.vendor.mtk_modem_monitor_support=1 \
     ro.vendor.mtk_nn.option=B,D,E,F,Z \
     ro.vendor.mtk_nn_quant_preferred=1 \
+    ro.vendor.mtk_nn_support=1 \
     ro.vendor.mtk_pq_color_mode=1 \
     ro.vendor.mtk_pq_support=2 \
     ro.vendor.mtk_protocol1_rat_config=C/Lf/Lt/W/T/G \
