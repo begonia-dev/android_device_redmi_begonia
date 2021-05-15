@@ -21,11 +21,6 @@
      for different hardware and product builds.  Do not translate. -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
-    <dimen name="rounded_corner_content_padding">16dp</dimen>
-    <dimen name="recents_task_view_rounded_corners_radius">9dp</dimen>
-    <dimen name="navigation_side_padding">85dp</dimen>
-
     <!-- Doze: does this device support STATE_DOZE?  -->
     <bool name="doze_display_state_supported">true</bool>
 
