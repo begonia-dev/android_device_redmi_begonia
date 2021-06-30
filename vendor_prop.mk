@@ -465,10 +465,13 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     persist.dbg.vt_avail_ovr=1 \
     persist.dbg.wfc_avail_ovr=1
 
-# SurfaceFlinger
+# Colors
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.has_HDR_display=true \
-    ro.surface_flinger.has_wide_color_display=true
+    ro.surface_flinger.has_wide_color_display=true \
+    persist.sys.sf.color_saturation=1.1 \
+    persist.sys.sf.color_mode=9 \
+    persist.sys.sf.native_mode=2
 
 # Zygote
 PRODUCT_PROPERTY_OVERRIDES += \
