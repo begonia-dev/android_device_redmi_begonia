@@ -786,10 +786,6 @@ vendor/lib64/egl/libGLES_meow.so
 vendor/lib64/egl/libMEOW_trace.so
 vendor/lib64/libOpenCL.so
 
-# HotwordEnrollment
--product/priv-app/HotwordEnrollmentOKGoogleCORTEXM4/HotwordEnrollmentOKGoogleCORTEXM4.apk
--product/priv-app/HotwordEnrollmentXGoogleCORTEXM4/HotwordEnrollmentXGoogleCORTEXM4.apk
-
 # Kernel-Modules
 vendor/lib/modules/bt_drv.ko:vendor/lib/modules_prebuilt/bt_drv.ko
 vendor/lib/modules/fmradio_drv.ko:vendor/lib/modules_prebuilt/fmradio_drv.ko
