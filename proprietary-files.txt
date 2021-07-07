@@ -1137,20 +1137,25 @@ vendor/lib64/libteeclientjni.so
 vendor/lib64/se_extn_client.so
 vendor/lib64/secure_element-impl.so
 
-# Neural-networks
-vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron|53f8ed2c6c007b4dd77b9ef803571c679f50beb0
+# Neural-networks | From begonia-user 11 RP1A.200720.011 V12.5.1.0.RGGCNXM release-keys
+vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron|daf5ca0c840fc178f8bea9b62c39312c1242fb40
 vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc|ebdc6355d6d4b243161f536aeafb9392373bde11
-vendor/lib64/libneuroeara.so|c446ef167e59fac98abbbbb5ef07375412d5deaf
-vendor/lib64/libneuron_adapter.so|4b022e738f4dde8b627388e85036d446994215a5
-vendor/lib64/libneuron_aidepth.so|ce35794aa0588b5f35f222c036d6f6013476f9ca
-vendor/lib64/libneuron_platform.so|51ce090d32acc2f5b5420dc33468e32248ca71ab
-vendor/lib64/libneuron_runainr.so|f4ca0f4ed0f2a4c01f9d05d2463bcdba8dee4f6c
-vendor/lib64/libneuron_runtime.so|cb9e66583deacdb1536248aac33eb4e3e34fb711
-vendor/lib64/libneuropilot_hal_utils.so|1eb2933feaff2e8060e841c74cacf1817c4889ef
-vendor/lib64/libneuropilot_jni_R.so|e8a78a81eaefd073c75d9648c30c74579dae947e
-vendor/lib/libneuroeara.so|bda7ec7fc57384bbba916fa18e183ffb8a8e93a1
-vendor/lib/libneuropilot_hal_utils.so|10e6f2088cc67a3240b3ea34ad691bdaae440f22
-vendor/lib/libneuropilot_jni_R.so|0d8f1078339b551124250eeb5c9bcc4eb4cd3f9b
+-vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-mtk-dsp-gpu.xml|21d66455f0f9e399b6ce05865080da8b912436ac
+vendor/lib/libneuroeara.so|746b60e396520ddb788c8284d9778099a5ef8a86
+vendor/lib/libneuropilot_hal_utils.so|79888a4d0202ac7ac8552437726edf7e2c31772d
+vendor/lib/libneuropilot_jni_R.so|ae2874cf84c116016198240aade069abca82abaa
+vendor/lib/libarmnn_ndk.mtk.so|264e74895a7261f0795e8d304016f45133df4906
+vendor/lib/libcmdl_ndk.mtk.so|28af41508eb702223f5bc7a767403e2dd3413176
+vendor/lib64/libneuroeara.so|8f34993802344f6a3106206ef72cac838e1c093b
+vendor/lib64/libneuron_adapter.so|27deb18d03937dc2a8e6f8a47d09e715083b26e5
+vendor/lib64/libneuron_platform.so|f8d08c56765998f8745bcaa6be844291512ca72b
+vendor/lib64/libneuron_runtime.so|7eaa0dfa53e28d5fce6185f1e07888d70412096a
+vendor/lib64/libneuropilot_hal_utils.so|76dccfc3139109b18251716815956d960691f566
+vendor/lib64/libneuropilot_jni_R.so|fdd90ab21bf52ad4add12691f31f01c80b04be41
+vendor/lib64/libarmnn.so|3903dc96be2aaa6767518dd670d96dde94cd0bf8
+vendor/lib64/libarmnn_ndk.mtk.so|c1cb1964812b9d56f8b063be9a30aba0d13db7d4
+vendor/lib64/libcmdl.so|861fb9c6d94980de5a58d73e404cd88567421920
+vendor/lib64/libcmdl_ndk.mtk.so|44debcccf39935d2750422f97c6b70618bd10dff
 
 # Power (Hardware)
 vendor/etc/powercontable.xml
@@ -2033,7 +2038,6 @@ vendor/lib64/libcarrierconfig.so
 vendor/lib64/libccci_util.so
 vendor/lib64/libcharon-ss.so
 vendor/lib64/libchromanr.so
-vendor/lib64/libcmdl.so
 vendor/lib64/libcrypto-md.so
 vendor/lib64/libcrypto-ss.so
 vendor/lib64/libcurl-md.so
