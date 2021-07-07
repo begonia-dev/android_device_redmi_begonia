@@ -89,19 +89,6 @@ sys.ipo.disable=1
 # identity
 Build.BRAND=MTK
 
-#audio-add for misound
-ro.vendor.audio.soundfx.type=mi
-ro.vendor.audio.soundfx.usb=true
-
-#volume boost feature, 3 modes are auto, manual, none
-ro.vendor.audio.voice.volume.boost=manual
-
-#enable game affect
-ro.vendor.audio.game.effect=true
-
-#enable SoS
-ro.vendor.audio.sos=true
-
 #default value is true
 #Android Q copy prop set by audio hal
 vendor.audio.spkcal.copy.inhal=true
