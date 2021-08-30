@@ -196,36 +196,17 @@ PRODUCT_COPY_FILES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    capture.sh \
-    capture_headsetmic.sh \
-    playback.sh \
-    playback_headset.sh \
-    setup_headset2rcv.sh \
-    setup_headsetmic2headphone.sh \
-    setup_mainmic2headphone.sh \
-    setup_topmic2headphone.sh \
-    teardown_loopback.sh \
-    tp_data_collect.sh \
-    tp_selftest.sh \
-    factory_init.connectivity.rc \
-    factory_init.project.rc \
-    factory_init.rc \
-    init.ago.rc \
+    init_panel_info.sh \
+    partition_permission.sh \
+    throttle.sh \
     init.connectivity.rc \
-    init.mi_thermald.rc \
     init.modem.rc \
     init.mt6785.rc \
     init.mt6785.usb.rc \
     init.project.rc \
     init.sensor_1_0.rc \
-    meta_init.connectivity.rc \
-    meta_init.modem.rc \
-    meta_init.project.rc \
-    meta_init.rc \
-    multi_init.rc \
-    fstab.enableswap \
     fstab.mt6785 \
-    ueventd.mtk.rc
+    ueventd.mt6785.rc
 
 # Ramdisk for kernel
 PRODUCT_COPY_FILES += \

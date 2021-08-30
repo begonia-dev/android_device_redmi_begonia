@@ -1,47 +1,26 @@
-# MTK platform .rc configure
-
 import /vendor/etc/init/hw/init.connectivity.rc
 import /vendor/etc/init/hw/init.mt6785.usb.rc
 import /vendor/etc/init/hw/init.project.rc
-import /system/etc/init/hw/init.aee.rc
-import /FWUpgradeInit.rc
-import /vendor/etc/init/hw/init.aee.rc
-import /vendor/etc/init/hw/init.volte.rc
-import /vendor/etc/init/hw/init.mal.rc
 import /vendor/etc/init/hw/init.sensor_1_0.rc
-import /vendor/etc/init/hw/init.stnfc.rc
-import /system/etc/init/hw/init.stnfc.rc
-
-# init.modem.rc must be the LAST rc file because vold.post_fs_data_done is set in it
 import /vendor/etc/init/hw/init.modem.rc
-# *** DO NOT import the new rc file after this line ***
 
 on early-init
     write /proc/bootprof "INIT:early-init"
-    # boot perf. tune
     write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "0 0 0 0"
     write /sys/devices/platform/10012000.dvfsrc/helio-dvfsrc/dvfsrc_req_ddr_opp 0
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
 
 on init
-    # Support legacy paths
-    symlink /sdcard /mnt/sdcard
-
-    # if primary storage is physical, set ro.vold.primary_physical to 1
-    # setprop ro.vold.primary_physical 1
-
-    mkdir /mnt/cd-rom 0000 system system
-
-# change lk_env permission
+    # change lk_env permission
     chown root system /proc/lk_env
     chmod 0660 /proc/lk_env
 
-# increase sysctl_rmem_max and sysctl_wmem_max values to 2M
+    # increase sysctl_rmem_max and sysctl_wmem_max values to 2M
     write /proc/sys/net/core/wmem_max 8388608
     write /proc/sys/net/core/rmem_max 8388608
 
-# add cpuset for big demand
+    # add cpuset for big demand
     mkdir /dev/cpuset/foreground/boost
     write /dev/cpuset/foreground/boost/mems 0
     chown system system /dev/cpuset/foreground/boost
@@ -53,8 +32,7 @@ on init
     chown system system /dev/cpuset/top-app/boost/tasks
     chmod 0660 /dev/cpuset/top-app/boost/tasks
 
-
-# update cpus for cpuset cgroup
+    # update cpus for cpuset cgroup
     write /dev/cpuset/foreground/cpus 0-7
     write /dev/cpuset/foreground/boost/cpus 6-7
     write /dev/cpuset/background/cpus 0-3
@@ -65,17 +43,16 @@ on init
 
 on late-init
     write /proc/bootprof "INIT:late-init"
-# enable rcu_expedited
-    write /sys/kernel/rcu_expedited 1
 
-# mount different fs start
+    # enable rcu_expedited
+    write /sys/kernel/rcu_expedited 1
 
 on charger
     # Turn backlight on and switch to backlight trigger
     write /sys/class/leds/lcd-backlight/brightness "1000"
     write /sys/class/leds/lcd-backlight/trigger "backlight"
 
-    exec /bin/e2fsck -f -p /dev/block/platform/bootdevice/by-name/cache
+    exec /system/bin/e2fsck -f -p /dev/block/platform/bootdevice/by-name/cache
     mount ext4 /dev/block/platform/bootdevice/by-name/cache /cache rw wait
     chmod 0660 /dev/spm
     chown system system /dev/spm
@@ -89,6 +66,7 @@ on charger
     restorecon_recursive /mnt/vendor/nvcfg
     write /sys/devices/platform/battery_meter/FG_daemon_log_level 7
     write /sys/bus/platform/devices/battery/FG_daemon_log_level 7
+
     # Permissions for System Server and daemons.
     chown system system /sys/power/autosleep
     chown system system /sys/power/state
@@ -104,36 +82,42 @@ on charger
     start fuelgauged
     start fuelgauged_nvram
 
+    chmod 0664 /sys/class/leds/lcd-backlight/brightness
     chown system system /sys/class/leds/lcd-backlight/brightness
+    chmod 0664 /sys/class/leds/lcd-backlight/max_brightness
+    chown system system /sys/class/leds/lcd-backlight/max_brightness
+    chmod 0664 /sys/class/leds/white/brightness
     chown system system /sys/class/leds/white/brightness
-    chown system system /sys/class/leds/green/brightness
 
-    start light-hal-2-0
-    start health-hal-2-0
+    start vendor.light-default
+
+    # MI Thermald
+    wait /sys/class/power_supply/battery/temp
+    start mi_thermald
 
 on fs
     write /proc/bootprof "INIT:Mount_START"
     write /sys/kernel/debug/tracing/trace_marker "B|1|Mount"
     wait_for_prop hwservicemanager.ready "true"
-    start vendor.boot-hal-1-0
-    mount_all /vendor/etc/fstab.mt6785 --early
-    mount_all /vendor/etc/fstab.mt6785 --late
-    exec /bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/platform/bootdevice/by-name/userdata
+    start vendor.boot-hal-1-1
+    mount_all --early
+    exec /system/bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/platform/bootdevice/by-name/userdata
     write /sys/kernel/debug/tracing/trace_marker "E"
     write /proc/bootprof "INIT:Mount_END"
     write /sys/block/zram0/comp_algorithm lz4
     write /proc/sys/vm/page-cluster 0
     write /proc/sys/vm/swappiness 100
     write /sys/kernel/mm/swap/vma_ra_enabled false
-    swapon_all /vendor/fstab.enableswap
-    mkdir /mnt/vendor/persist/stability 0755 system system
-    mkdir /mnt/vendor/persist/misys 0755 system system
+    swapon_all /vendor/fstab.mt6785
+
     #Audio-add
     chmod 0771 /mnt/vendor/persist/audio
 
-on fs
-
-   mount iso9660 loop@/vendor/etc/iAmCdRom.iso /mnt/cd-rom ro
+on late-fs
+    write /proc/bootprof "INIT:late-fs"
+    wait_for_prop hwservicemanager.ready "true"
+    exec_start wait_for_keymaster
+    mount_all --late
 
 on post-fs
     write /proc/bootprof "INIT:post-fs"
@@ -145,9 +129,6 @@ on post-fs
     write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "3 100"
     write /proc/sys/kernel/sched_stune_task_threshold 0
 
-    # Support legacy paths
-    symlink /sdcard /storage/sdcard0
-
     #change permissions for mediaserver
     chown root media /proc/clkmgr/mipi_test
 
@@ -156,6 +137,7 @@ on post-fs
     chown radio system /proc/clkmgr/pll_fsel
     chmod 0664 /proc/clkmgr/pll_test
     chmod 0664 /proc/clkmgr/pll_fsel
+
     #change permission for engineer mode
     chown radio system /proc/freqhopping/dramc
     chown radio system /proc/freqhopping/dumpregs
@@ -163,7 +145,7 @@ on post-fs
     chown radio system /proc/freqhopping/status
     chown radio system /proc/freqhopping/userdef
 
-# change owner
+    # change owner
     chown system system /proc/bootprof
     chmod 0664 /proc/bootprof
     chown root system /proc/mtprof/cputime
@@ -273,12 +255,10 @@ on post-fs-data
     chmod 0660 /dev/spm
     chown system system /dev/spm
 
-# GPS
+    # GPS
     chmod 0775 /vendor/xbin/MPED
     chmod 0666 /dev/gps_emi
 
-# -----------------------
-# Add by MTK
     # SCP log
     chmod 0664 /sys/class/misc/scp/scp_mobile_log
     chown root system /sys/class/misc/scp/scp_mobile_log
@@ -290,10 +270,12 @@ on post-fs-data
     chown root system /sys/class/misc/scp/scp_ee_force_ke
 
     # ADSP log
-    chmod 0660 /sys/class/misc/adsp/adsp_mobile_log
-    chown root system /sys/class/misc/adsp/adsp_mobile_log
+    chmod 0660 /sys/class/misc/adsp_0/log_enable
+    chown root system /sys/class/misc/adsp_0/log_enable
     chmod 0660 /dev/adsp
-    chown system media /dev/adsp
+    chown root media /dev/adsp
+    chmod 0440 /dev/adsp_0
+    chown system media /dev/adsp_0
 
     # SSPM log
     chmod 0620 /sys/class/misc/sspm/sspm_mobile_log
@@ -305,14 +287,9 @@ on post-fs-data
     chmod 444 /etc/radvd/radvd.conf
 
     # Mali 3D GPU driver
-    #insmod /vendor/lib/modules_prebuilt/mali.ko
     chmod 666 /dev/mali0
-    #chown system graphics /dev/mali
-
-
 
     # Touch Panel
-    # chmod 0664 /dev/touch
     chown root diag /sys/module/tpd_setting/parameters/tpd_calmat
     chown root diag /sys/module/tpd_setting/parameters/tpd_em_debounce_time
     chown root diag /sys/module/tpd_setting/parameters/tpd_mode
@@ -335,10 +312,7 @@ on post-fs-data
     chown root radio /dev/ptmx
 
     # M4U
-    #insmod /vendor/lib/modules_prebuilt/m4u.ko
-    #mknod /dev/M4U_device c 188 0
     chmod 0444 /dev/m4u
-    #chown system media /dev/M4U_device
 
     #set mlock to 64MB for netd
     setrlimit 8 67108864 67108864
@@ -347,11 +321,11 @@ on post-fs-data
     setrlimit 8 -1 -1
 
     # CMDQ
-    chmod 0644 /dev/mtk_cmdq
+    chmod 0640 /dev/mtk_cmdq
     chown system system /dev/mtk_cmdq
 
     # MDP SYNC
-    chmod 0644 /dev/mdp_sync
+    chmod 0640 /dev/mdp_sync
     chown system system /dev/mdp_sync
 
     #OFFLOAD SERVICE
@@ -384,16 +358,16 @@ on post-fs-data
     #VideoCodec
     chmod 0660 /dev/vcu
     chown media system /dev/vcu
-    chmod 0666 /dev/video0
+    chmod 0660 /dev/video0
     chown media system /dev/video0
-    chmod 0666 /dev/video1
+    chmod 0660 /dev/video1
     chown media system /dev/video1
     mkdir /data/vendor/vcodec 0770 media system
     mkdir /data/vendor/vcodec/log 0770 media system
+    mkdir /data/vendor/vcodec/in 0770 media system
+    mkdir /data/vendor/vcodec/out 0770 media system
 
     #MJC
-    #insmod /vendor/lib/modules_prebuilt/mjc_kernel_driver.ko
-    #mknod /dev/MJC c 168 0
     chmod 0660 /dev/MJC
     chown media system /dev/MJC
 
@@ -408,8 +382,8 @@ on post-fs-data
     chown radio system /sys/devices/platform/mt-pmic/low_battery_protect_ut
 
     #MDDB
-    mkdir /data/vendor/meta 0777 root root
-    mkdir /data/vendor/meta/mddb 0777 root root
+    mkdir /data/vendor_de/meta 0770 system system
+    mkdir /data/vendor_de/meta/mddb 0770 system system
 
     chmod 0660 /data/misc/acdapi/calib.dat
     chmod 0660 /data/misc/acdapi/param.dat
@@ -512,8 +486,6 @@ on post-fs-data
     chmod 0660 /dev/fm
     chown media media /dev/fm
 
-    # device apc settings
-
     # device info /proc interface
     chmod 0440 /dev/devmap
     chown root system /dev/devmap
@@ -521,7 +493,6 @@ on post-fs-data
     # bluetooth
     chown bluetooth bluetooth /dev/hid-keyboard
     chmod 0660 /dev/hid-keyboard
-    #Use uinput's default permission
     chown system net_bt_admin /dev/uinput
 
     # UIBC
@@ -575,9 +546,7 @@ on post-fs-data
     chmod 0660 /dev/MAIN2AF
     chmod 0660 /dev/SUBAF
     chmod 0660 /dev/SUB2AF
-
-    #xiaomi algoup
-    chmod 0664 /dev/vpu
+    chmod 0660 /dev/vpu
 
     chown system camera /dev/camera-sysram
     chown system camera /dev/camera-isp
@@ -634,9 +603,7 @@ on post-fs-data
     chmod 0660 /dev/mtk_dfrc
     chown system graphics /dev/mtk_dfrc
 
-
-   #change partition permission
-
+    #change partition permission
     chmod 0640 /mtd@sec_ro
     chown root system /mtd@sec_ro
 
@@ -687,9 +654,8 @@ on post-fs-data
 
     chmod 0666 /dev/exm0
 
-
-	#Thermal
-	mkdir /data/vendor/.tp/ 0775 system system
+    #Thermal
+    mkdir /data/vendor/.tp/ 0775 system system
     # power manager
     write /sys/power/pm_async 0
     write /sys/power/pm_freeze_timeout 2000
@@ -707,9 +673,6 @@ on post-fs-data
     chmod 0664 sys/kernel/debug/rt-regmap/mt6360_pmic.5-001a/reg_addr
     chmod 0664 sys/kernel/debug/rt-regmap/mt6360_ldo.5-0064/reg_addr
     chmod 0664 sys/kernel/debug/rt-regmap/mt6360-4e/reg_addr
-
-# End of adding by MTK drivers
-# -----------------------
 
 on boot
     write /proc/bootprof "INIT:boot"
@@ -762,11 +725,11 @@ on boot
     chmod 0220 /sys/power/tuxonice/do_hibernate
 
 
-# Smartbook Handler Framework
+    # Smartbook Handler Framework
     chown system system /sys/power/sb_state
     chmod 0660 /sys/power/sb_state
 
-# HMP CPU hotplug strategy
+    # HMP CPU hotplug strategy
     chown system system /proc/hps/num_base_perf_serv
     chmod 0660 /proc/hps/num_base_perf_serv
     chown system system /proc/hps/num_limit_power_serv
@@ -788,7 +751,7 @@ on boot
     chown system system /proc/hps/down_times
     chmod 0660 /proc/hps/down_times
 
-# PPM
+    # PPM
     chown system system /proc/ppm/mode
     chmod 0660 /proc/ppm/mode
     chown system system /proc/ppm/policy/perfserv_min_perf_idx
@@ -822,7 +785,7 @@ on boot
     chown system system /proc/ppm/policy/hica_settings/L_ONLY_to_4L_LL/loading_hold_time
     chmod 0660 /proc/ppm/policy/hica_settings/L_ONLY_to_4L_LL/loading_hold_time
 
-# cpu_loading
+    # cpu_loading
     chown system system /proc/cpu_loading/onoff
     chmod 0664 /proc/cpu_loading/onoff
     chown system system /proc/cpu_loading/overThrhld
@@ -834,7 +797,7 @@ on boot
     chown system system /proc/cpu_loading/uevent_enable
     chmod 0664 /proc/cpu_loading/uevent_enable
 
-# CPU freq
+    # CPU freq
     chown system system /proc/cpufreq/cpufreq_limited_by_hevc
     chmod 0660 /proc/cpufreq/cpufreq_limited_by_hevc
     chown system system /proc/cpufreq/cpufreq_limited_max_freq_by_user
@@ -844,7 +807,7 @@ on boot
     chown system system /proc/cpufreq/enable_hw_gov
     chmod 0660 /proc/cpufreq/enable_hw_gov
 
-# BW monitor
+    # BW monitor
     chown system system /proc/fliperfs/cg_enable
     chmod 0664 /proc/fliperfs/cg_enable
     chown system system /proc/fliperfs/cg_threshold
@@ -854,7 +817,7 @@ on boot
     chown system system /proc/fliperfs/perf
     chmod 0664 /proc/fliperfs/perf
 
-# perfmgr
+    # perfmgr
     chown system system /proc/perfmgr/smart/hps_is_heavy
     chmod 0660 /proc/perfmgr/smart/hps_is_heavy
     chown system system /proc/perfmgr/smart/hps_check_duration
@@ -866,8 +829,8 @@ on boot
     chown system system /sys/power/dcm_state
     chmod 0660 /sys/power/dcm_state
 
-##Netlog tool
-   #change permissions about terminal
+    #Netlog tool
+    #change permissions about terminal
     chown root radio /proc/net/vlan/config
     chmod 0640 /proc/net/vlan/config
     chown root radio /proc/net/ip6_tables_matches
@@ -886,15 +849,15 @@ on boot
     chown root radio /proc/net/netfilter/nfnetlink_log
     chown root radio /proc/net/netfilter/nfnetlink_queue
 
-# WMT proc
+    # WMT proc
     chown shell system /proc/driver/wmt_dbg
     chown shell system /proc/driver/wmt_aee
 
-# define device for EMCSMDLOGGER
+    #Define device for EMCSMDLOGGER
     chown system radio /dev/ttyGS3
     chmod 0660 /dev/ttyGS3
 
-#Define device for ATCID
+    #Define device for ATCID
     chmod 660 /dev/ttyGS0
     chown system radio /dev/ttyGS0
     chmod 660 /dev/ttyGS1
@@ -925,42 +888,15 @@ on property:vold.decrypt=trigger_shutdown_framework
     setprop sys.boot_completed 0
     setprop dev.bootcomplete 0
 
-# Set enableflags for boot Systrace
-on early-init && property:ro.boot.boot_trace=1
-    setprop debug.atrace.tags.enableflags 0x1fffffe
-
 # Stop bootprof
 on property:sys.boot_completed=1
     write /proc/bootprof "0"
-    write /proc/mtprintk ${persist.vendor.uartconsole.enable}
-
-## mtk printk uart controller
-on property:persist.vendor.uartconsole.enable=*
-    write /proc/mtprintk ${persist.vendor.uartconsole.enable}
-
-# bugreport is triggered by holding down volume down, volume up and power
-service bugreport /bin/dumpstate -d -p -B -z \
-        -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
-    class late_start
-    disabled
-    oneshot
-    keycodes 114 115 116
 
 # end boot time fs tune
 on property:sys.boot_completed=1
     write /sys/block/mmcblk0/queue/iostats 1
     write /sys/block/mmcblk0/queue/read_ahead_kb 512
     write /sys/block/mmcblk0/queue/nr_requests 128
-    write /sys/block/sdc/queue/iostats 1
-    write /sys/block/sdc/queue/read_ahead_kb 512
-    write /sys/block/sdc/queue/nr_requests 128
-    write /sys/block/dm-0/queue/read_ahead_kb 128
-    write /sys/block/dm-1/queue/read_ahead_kb 128
-    write /sys/block/dm-2/queue/read_ahead_kb 128
-    write /sys/block/dm-3/queue/read_ahead_kb 128
-    write /sys/block/dm-4/queue/read_ahead_kb 128
-    write /sys/block/dm-5/queue/read_ahead_kb 128
-
 
 # start EAS+
 on property:sys.boot_completed=1
@@ -988,116 +924,39 @@ on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "schedplus"
     write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor "schedplus"
 
-#service dpfd /vendor/bin/dpfd
-#	user root
-#	group system media
-
-#
-#  External Modme control related services
-#
-
-#
-#  Modem related services (Begin)
-#
-##Add by T.Zh for ppp daemon
-#service pppd /bin/pppd file /data/misc/ppp/ppp_options
-#    user root
-#    disabled
-#    oneshot
-#
-##
-#
-#  Modem related services (End)
-#
-
-#add for power-off alarm
-#service poad /vendor/bin/poad
-#    class main
-#    user system
-#    group system
-#    oneshot
-
-#service BGW /vendor/xbin/BGW
-#	user system
-#	group gps system radio
-#	class main
-
-# Battery info
-on property:persist.vendor.mediatek.fg.disable=1
-    write /sys/devices/platform/battery_meter/FG_daemon_disable 1
-    write /sys/bus/platform/devices/battery/FG_daemon_disable 1
-
-on property:persist.vendor.mediatek.fg.force25c=1
-    write /sys/devices/platform/battery_meter/FG_drv_force25c 1
-    write /sys/bus/platform/devices/battery/Battery_Temperature 25
-
-on property:persist.vendor.mediatek.fg.force25c=0
-    write /sys/devices/platform/battery_meter/FG_drv_force25c 0
-    write /sys/bus/platform/devices/battery/Battery_Temperature 65535
-
-on property:persist.vendor.mediatek.fg.log.enable=1
-    write /sys/devices/platform/battery_meter/FG_daemon_log_level 7
-    write /sys/bus/platform/devices/battery/FG_daemon_log_level 7
-    write /proc/sys/kernel/printk 8
-
-# add loghidl client
-service loghidlsysservice /bin/loghidlsysservice
-    class main
-    user root
-    group system
-    disabled
-
-# add meta_tst for ATM
-service meta_tst /vendor/bin/meta_tst
-    class main
-    user system
-    group radio gps system wifi audio bluetooth media
-    disabled
-    oneshot
-
-# start meta_tst for ATM
-on property:sys.boot_completed=1 && property:ro.boot.atm=enable
-    start meta_tst
-    start loghidlvendorservice
-    start loghidlsysservice
-
-on property:sys.boot_completed=1 && property:persist.atm_enabled=true
-    setprop vendor.usb.atm 1
-    start meta_tst
-    start loghidlvendorservice
-    start loghidlsysservice
-
-on property:sys.boot_completed=1 && property:persist.atm_enabled=false
-    setprop vendor.usb.atm 0
-    stop meta_tst
-    stop loghidlvendorservice
-    stop loghidlsysservice
-
 # reset mdmode when modem crash happens in ATM
 on property:vendor.mtk.md1.status=reset
     setprop persist.vendor.atm.mdmode normal
 
 # FPSGO FBT Game
 on boot
-    insmod /vendor/lib/modules_prebuilt/fpsgo.ko
+    insmod /vendor/lib/modules/fpsgo.ko
 
 on init
     symlink /dev/block/platform/bootdevice /dev/block/bootdevice
 
-# VSIM service (vendor OSI)
-service osi /bin/osi
-    class main
-    user root
-    disabled
-    oneshot
-    #seclabel u:r:osi:s0
-
+# Offline Charger
 service charger /bin/charger
     class charger
     critical
-    #seclabel u:r:charger:s0
     group system graphics
     seclabel u:r:healthd:s0
+
+# MI Thermald
+service mi_thermald /system/vendor/bin/mi_thermald
+    class main
+    user root
+    group system
+    seclabel u:r:mi_thermald:s0
+
+# MTK OMX RC
+service vendor.media.omx /vendor/bin/hw/android.hardware.media.omx@1.0-service
+    override
+    class main
+    user mediacodec
+    group camera drmrpc mediadrm media_rw sdcard_rw media system audio inet net_bt net_bt_admin net_bw_acct sdcard_r
+    ioprio rt 4
+    writepid /dev/cpuset/foreground/tasks
 
 service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.1-service
     override

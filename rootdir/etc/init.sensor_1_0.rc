@@ -1,7 +1,7 @@
-# MTK platform .rc configure
 on post-fs-data
     # calibration
     mkdir /data/vendor/sensor 0774 system system
+
     # Sensor
     chmod 0660 /dev/hwmsensor
     chmod 0660 /dev/msensor
@@ -118,11 +118,13 @@ on post-fs-data
     chmod 0660 /sys/class/sensor/m_baro_misc/barodelay
     chmod 0660 /sys/class/sensor/m_baro_misc/barobatch
     chmod 0660 /sys/class/sensor/m_baro_misc/baroflush
+    chmod 0660 /sys/class/sensor/m_baro_misc/barocali
     chown system system /sys/class/sensor/m_baro_misc/baroenablenodata
     chown system system /sys/class/sensor/m_baro_misc/baroactive
     chown system system /sys/class/sensor/m_baro_misc/barodelay
     chown system system /sys/class/sensor/m_baro_misc/barobatch
     chown system system /sys/class/sensor/m_baro_misc/baroflush
+    chown system system /sys/class/sensor/m_baro_misc/barocali
 
     chmod 0660 /sys/class/sensor/m_hmdy_misc/hmdyenablenodata
     chmod 0660 /sys/class/sensor/m_hmdy_misc/hmdyactive
@@ -155,7 +157,6 @@ on post-fs-data
     chown system system /sys/class/sensor/m_situ_misc/situbatch
     chown system system /sys/class/sensor/m_situ_misc/situflush
     chown system system /sys/class/sensor/m_situ_misc/sarcali
-
 
     chmod 0660 /sys/class/sensor/m_act_misc/actactive
     chmod 0660 /sys/class/sensor/m_act_misc/actdelay
