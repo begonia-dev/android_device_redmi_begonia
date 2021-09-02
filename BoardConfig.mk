@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2019 Potato Open Sauce Project
+# Copyright (C) 2019-2021 Potato Open Sauce Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -132,7 +132,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.mt6785
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2021-02-01
+VENDOR_SECURITY_PATCH := 2021-06-01
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)

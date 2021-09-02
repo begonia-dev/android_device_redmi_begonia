@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2019 The Potato Open Sauce Project
+# Copyright (C) 2019-2021 The Potato Open Sauce Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -7,20 +7,21 @@
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
-# MTK-OSS
-$(call inherit-product, vendor/mediatek/opensource/mtk-oss.mk)
-
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio.effect@5.0-impl \
+    android.hardware.audio.effect@6.0-impl \
     android.hardware.audio.common@6.0-util \
-    android.hardware.soundtrigger@2.2-impl \
+    android.hardware.soundtrigger@2.3-impl \
     android.hardware.bluetooth.audio@2.0-impl \
     audio.a2dp.default \
+    audio.bluetooth.default \
+    audio.r_submix.default \
+    audio.usb.default \
+    audio_policy.stub \
     libaudiopreprocessing \
     libbundlewrapper \
     libdownmix \
@@ -29,7 +30,10 @@ PRODUCT_PACKAGES += \
     libldnhncr \
     libreverbwrapper \
     libvisualizer \
-    tinymix
+    libtinycompress \
+    libtinycompress.vendor \
+    libaudiofoundation \
+    libaudiofoundation.vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_device.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_device.xml \
@@ -62,13 +66,10 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@2.0-impl \
-    android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.composer@2.1-service \
-    android.hardware.graphics.mapper@2.0-impl-2.1 \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
+    libdrm.vendor \
     libvulkan
 
 # DRM
@@ -77,10 +78,15 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service-lazy \
     android.hardware.drm@1.3-service.clearkey
 
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-service \
+    android.hardware.gatekeeper@1.0-impl
+
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-impl \
-    android.hardware.health@2.0-service
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-service
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -106,6 +112,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
     android.hardware.ir@1.0-service
+
+# Keymaster
+PRODUCT_PACKAGES += \
+    libkeymaster4.vendor:64 \
+    libkeymaster4support.vendor:64 \
+    libkeymaster_portable.vendor:64 \
+    libkeymaster_messages.vendor:64 \
+    libsoft_attestation_cert.vendor:64 \
+    libpuresoftkeymasterdevice.vendor:64
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -240,11 +255,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay
 
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.0-impl \
-    android.hardware.thermal@1.0-service
-
 # Text classifier
 PRODUCT_PACKAGES += \
     libtextclassifier_hash.vendor
@@ -252,11 +262,6 @@ PRODUCT_PACKAGES += \
 # TinyXML
 PRODUCT_PACKAGES += \
     libtinyxml
-
-# Vibrator
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl \
-    android.hardware.vibrator@1.0-service
 
 # WiFi
 PRODUCT_COPY_FILES += \
@@ -279,53 +284,6 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     NfcNci \
     Tag
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
-    $(LOCAL_PATH)/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf \
-    $(LOCAL_PATH)/nfc/libese-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libese-nxp.conf \
-    $(LOCAL_PATH)/nfc/libnfc-nxp_RF.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp_RF.conf \
-    $(LOCAL_PATH)/nfc/libnfc-nxp-pnscr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp-pnscr.conf \
-    $(LOCAL_PATH)/nfc/sn100u_bootup.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_bootup.pnscr \
-    $(LOCAL_PATH)/nfc/sn100u_ese_disableIso.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_ese_disableIso.pnscr \
-    $(LOCAL_PATH)/nfc/sn100u_ese_disableIsoRead.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_ese_disableIsoRead.pnscr \
-    $(LOCAL_PATH)/nfc/sn100u_nfcon.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_nfcon.pnscr \
-    $(LOCAL_PATH)/nfc/sn100u_pnx_chr.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_chr.pnscr \
-    $(LOCAL_PATH)/nfc/sn100u_pnx_cui.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_cui.pnscr \
-    $(LOCAL_PATH)/nfc/sn100u_pnx_ese_3.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_3.pnscr \
-    $(LOCAL_PATH)/nfc/sn100u_pnx_ese_aclog.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_aclog.pnscr \
-    $(LOCAL_PATH)/nfc/sn100u_pnx_ese_cplc.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_cplc.pnscr \
-    $(LOCAL_PATH)/nfc/sn100u_pnx_ese_fabkey.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_fabkey.pnscr \
-    $(LOCAL_PATH)/nfc/sn100u_pnx_ese_free.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_free.pnscr \
-    $(LOCAL_PATH)/nfc/sn100u_pnx_ese_keyset.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_keyset.pnscr \
-    $(LOCAL_PATH)/nfc/sn100u_pnx_ese_sn.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_sn.pnscr \
-    $(LOCAL_PATH)/nfc/sn100u_pnx_ndi.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ndi.pnscr \
-    $(LOCAL_PATH)/nfc/sn100u_pnx_pcv.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_pcv.pnscr \
-    $(LOCAL_PATH)/nfc/sn100u_pnx_sst.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_sst.pnscr
-
-PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/android.hardware.audio.common@5.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/android.hardware.audio.common@5.0-v29.so \
-    prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/android.hardware.audio.effect@5.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/android.hardware.audio.effect@5.0-v29.so \
-    prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/android.hardware.audio@5.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/android.hardware.audio@5.0-v29.so \
-    prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/libkeymaster_portable.so:$(TARGET_COPY_OUT_VENDOR)/lib/libkeymaster_portable-v29.so \
-    prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/libmedia_helper.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/libmedia_helper-v29.so \
-    prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/libmedia_helper.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmedia_helper-v29.so \
-    prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/libprotobuf-cpp-full.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-full.so \
-    prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite.so \
-    prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/libpuresoftkeymasterdevice.so:$(TARGET_COPY_OUT_VENDOR)/lib/libpuresoftkeymasterdevice-v29.so \
-    prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/libsoftkeymasterdevice.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsoftkeymasterdevice-v29.so \
-    prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-sp/libunwindstack.so:$(TARGET_COPY_OUT_VENDOR)/lib/libunwindstack-v29.so \
-    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/android.hardware.audio.common@5.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.audio.common@5.0-v29.so \
-    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/android.hardware.audio.effect@5.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.audio.effect@5.0-v29.so \
-    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/android.hardware.audio@5.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.audio@5.0-v29.so \
-    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libkeymaster_portable.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libkeymaster_portable-v29.so \
-    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libmedia_helper.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/libmedia_helper-v29.so \
-    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libmedia_helper.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmedia_helper-v29.so \
-    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-full.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-full.so \
-    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-lite.so \
-    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libpuresoftkeymasterdevice.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libpuresoftkeymasterdevice-v29.so \
-    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libsoftkeymasterdevice.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsoftkeymasterdevice-v29.so \
-    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-sp/libunwindstack.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libunwindstack-v29.so
 
 PRODUCT_PACKAGES += \
     libhwbinder \
@@ -350,13 +308,6 @@ PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager \
     PresencePolling \
     RcsService
-
-# Video Telephony
-PRODUCT_PACKAGES += \
-    vendor.mediatek.hardware.videotelephony@1.0
-
-# MediaTek IMS
-$(call inherit-product, vendor/mediatek/ims/mtk-ims.mk)
 
 # Inherit vendor
 $(call inherit-product, vendor/redmi/begonia/begonia-vendor.mk)

@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2019 Potato Open Sauce Project
+# Copyright (C) 2019-2021 Potato Open Sauce Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ PRODUCT_MANUFACTURER := Xiaomi
 BUILD_FINGERPRINT := "google/sunfish/sunfish:11/RQ3A.210805.001.A1/7474174:user/release-keys"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="begonia-user 10 QP1A.190711.020 V12.0.7.0.QGGMIXM release-keys" \
+    PRIVATE_BUILD_DESC="begonia-user 11 RP1A.200720.011 V12.5.1.0.RGGMIXM release-keys" \
     PRODUCT_NAME="begonia" \
     TARGET_DEVICE="begonia"
 
