@@ -3,21 +3,27 @@
 #
 # For special ro override property
 # White Point Calibration
-ro.whitepoint_calibration_enable=false
+ro.vendor.whitepoint_calibration_enable=false
 #Property for display feature histogram
-ro.displayfeature.histogram.enable=false
+ro.vendor.histogram.enable=false
 # support unlimited color temperature adjust
-ro.colorpick_adjust=true
-ro.all_modes.colorpick_adjust=true
+ro.vendor.colorpick_adjust=true
+ro.vendor.all_modes.colorpick_adjust=true
 # displayfeature use poll to monitor backlight brightness
-ro.xiaomi.bl.poll=true
+ro.vendor.xiaomi.bl.poll=true
+
+#support dual wifi feature
+ro.vendor.net.enable_dual_wifi=1
 
 ro.netflix.bsp_rev=MTK6785-18758-1
 
-# Camera
-persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera,com.google.camera
-vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.google.camera
-vendor.camera.aux.packageblacklist=org.telegram.messenger,com.microsoft.teams,com.discord
+#prop for displayfeture cabc/bcbc/dfps
+ro.vendor.cabc.enable=true
+#
+# from device/mediatek/mt6785/common_ro.prop
+#
+# For common ro override property
+
 
 #
 # from device/mediatek/system/common/system.prop
@@ -32,7 +38,7 @@ wifi.interface=wlan0
 ro.mediatek.wlan.wsc=1
 ro.mediatek.wlan.p2p=1
 mediatek.wlan.ctia=0
-ro.vendor.net.enable_dual_wifi=1
+
 
 #
 wifi.tethering.interface=ap0
@@ -89,9 +95,6 @@ sys.ipo.disable=1
 # identity
 Build.BRAND=MTK
 
-#default value is true
-#Android Q copy prop set by audio hal
-vendor.audio.spkcal.copy.inhal=true
 # end of device/mediatek/system/common/system.prop
 #
 # from device/mediatek/mt6785/common_rw.prop
@@ -106,9 +109,9 @@ persist.sys.mdlog_dumpback=2
 #enable sar feature
 persist.radio.sar_sar_sensor=true
 #system property for displayfeature hidl
-sys.displayfeature_hidl=true
+vendor.displayfeature_hidl=true
 # displayfeature and displayfeatureservice use it to debug pq effect
-sys.displayfeature.entry.enable=true
+vendor.displayfeature.entry.enable=true
 
 #quick charge type detect
 persist.vendor.quick.charge=1
@@ -120,7 +123,9 @@ ro.camera.sensor.highres.0=[[9248:6936:33:0],[9280:6944:32:1]]
 ro.camera.sensor.highres.1=[[5184:3880:33:0],[5184:2920:33:0],[5184:2392:33:0],[3888:3888:33:0]]
 ro.camera.sensor.highres.0.max=9280:6944
 ro.camera.highres.packagelist=org.lineageos.snap
-persist.vendor.camera.privapp.list=com.android.camera
+persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera,com.google.camera
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.google.camera
+vendor.camera.aux.packageblacklist=org.telegram.messenger,com.microsoft.teams,com.discord
 
 # Cutout (POSP)
 ro.potato.has_cutout=true
