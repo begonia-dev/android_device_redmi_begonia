@@ -148,7 +148,6 @@ ODM_MANIFEST_BEGONIA_FILES := $(DEVICE_PATH)/manifest_begonia.xml
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 PRODUCT_VENDOR_MOVE_ENABLED := true
-BOARD_VNDK_RUNTIME_DISABLE := true
 
 # Sepolicy
 include device/mediatek/sepolicy/sepolicy.mk
