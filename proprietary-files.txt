@@ -885,8 +885,6 @@ vendor/lib64/libstagefrighthw.so
 # Mediatek
 vendor/bin/hw/android.hardware.sensors@1.0-service-mediatek
 vendor/bin/hw/android.hardware.usb@1.1-service-mediatek
-vendor/bin/hw/android.hardware.vibrator-service.mediatek
-vendor/bin/hw/android.hardware.vibrator@1.0-service-mediatek
 vendor/bin/hw/vendor.mediatek.hardware.dfps@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.dplanner@2.0-service
 vendor/bin/hw/vendor.mediatek.hardware.gpu@1.0-service
@@ -898,7 +896,6 @@ vendor/bin/hw/vendor.mediatek.hardware.nwk_opt@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service
 vendor/etc/init/android.hardware.sensors@1.0-service-mediatek.rc
 vendor/etc/init/android.hardware.usb@1.1-service-mediatek.rc
-vendor/etc/init/android.hardware.vibrator@1.0-service-mediatek.rc
 vendor/etc/init/vendor.mediatek.hardware.dfps@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.dplanner@2.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.gpu@1.0-service.rc
@@ -912,7 +909,6 @@ vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
 vendor/etc/permissions/com.mediatek.hardware.vow_dsp.xml
 -vendor/etc/vintf/manifest/android.hardware.gpu@1.0-service.xml
 -vendor/etc/vintf/manifest/vendor.mediatek.hardware.dplanner@2.0-service.xml
-vendor/lib/hw/android.hardware.vibrator@1.0-impl-mediatek.so
 vendor/lib/hw/vendor.mediatek.hardware.dfps@1.0-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.mms@1.5-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.mtkcodecservice@1.1-impl.so
@@ -986,7 +982,6 @@ vendor/lib/vendor.mediatek.hardware.pq@2.6.so
 vendor/lib/vendor.mediatek.hardware.videotelephony@1.0.so
 vendor/lib64/android.hardware.power-service-mediatek.so
 vendor/lib64/hw/android.hardware.sensors@1.0-impl-mediatek.so
-vendor/lib64/hw/android.hardware.vibrator@1.0-impl-mediatek.so
 vendor/lib64/hw/vendor.mediatek.hardware.dfps@1.0-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.mms@1.5-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.mtkcodecservice@1.1-impl.so
@@ -1265,12 +1260,6 @@ vendor/lib64/hw/android.hardware.thermal@2.0-impl.so
 # Thermal-Hardware
 vendor/lib/hw/thermal.mt6785.so
 vendor/lib64/hw/thermal.mt6785.so
-
-# Vibrator
-vendor/bin/hw/vendor.mtk.hardware.vibrator@1.2-service
-vendor/etc/init/vendor.mtk.hardware.vibrator@1.2-service.rc
-vendor/etc/init/vibrator-mtk-default.rc
--vendor/etc/vintf/manifest/vibrator-mtk-default.xml
 
 # WiFi
 vendor/bin/hw/wpa_supplicant
