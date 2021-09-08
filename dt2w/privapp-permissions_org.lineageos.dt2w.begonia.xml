@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 <permissions>
-    <privapp-permissions package="co.potatoproject.dt2w.begonia">
+    <privapp-permissions package="org.lineageos.dt2w.begonia">
         <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
     </privapp-permissions>
 </permissions>
