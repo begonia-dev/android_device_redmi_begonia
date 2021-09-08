@@ -127,6 +127,9 @@ persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera,com
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.google.camera
 vendor.camera.aux.packageblacklist=org.telegram.messenger,com.microsoft.teams,com.discord
 
+# Charger
+ro.charger.enable_suspend=true
+
 # Blur
 ro.surface_flinger.supports_background_blur=1
 persist.sys.sf.disable_blurs=1
