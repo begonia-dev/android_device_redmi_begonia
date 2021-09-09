@@ -976,3 +976,7 @@ on property:persist.sys.begonia.dt2w=0
 
 on property:persist.sys.begonia.dt2w=1
     exec /system/bin/sendevent /dev/input/event2 0 1 5
+
+on boot
+    # SELinux
+    write /sys/fs/selinux/enforce 1
