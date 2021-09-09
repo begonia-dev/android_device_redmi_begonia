@@ -116,6 +116,9 @@ vendor.displayfeature.entry.enable=true
 #quick charge type detect
 persist.vendor.quick.charge=1
 
+# APEX
+ro.apex.updatable=false
+
 # Camera
 ro.camera.sensor.id_rear=0
 ro.camera.sensor.id_front=1
