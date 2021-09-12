@@ -309,8 +309,5 @@ PRODUCT_PACKAGES += \
     PresencePolling \
     RcsService
 
-# Kernel
-$(call inherit-product, device/redmi/begonia-kernel/kernel.mk)
-
 # Inherit vendor
 $(call inherit-product, vendor/redmi/begonia/begonia-vendor.mk)
