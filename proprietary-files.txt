@@ -1269,24 +1269,10 @@ vendor/lib64/vendor.mediatek.hardware.wifi.supplicant@2.1.so
 vendor/lib64/vendor.mediatek.hardware.wifi.supplicant@2.2.so
 
 # Xiaomi
-vendor/bin/hw/vendor.xiaomi.hardware.citsensorservice@1.1-service
-vendor/bin/hw/vendor.xiaomi.hardware.micharge@1.0-service
-vendor/bin/vsimd
-vendor/etc/init/vendor.xiaomi.hardware.citsensorservice@1.1-service.rc
-vendor/etc/init/vendor.xiaomi.hardware.micharge@1.0-service.rc
-vendor/etc/init/vendor.xiaomi.hardware.mtdservice@1.2-service.rc
--vendor/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.mtdservice.xml
--vendor/etc/vintf/manifest/vendor.xiaomi.hardware.micharge@1.0.xml
-vendor/lib64/hw/vendor.xiaomi.hardware.citsensorservice@1.1-impl.so
-vendor/lib64/hw/vendor.xiaomi.hardware.micharge@1.0-impl.so
 vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.0_vendor.so
 vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1.so
 vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1_vendor.so
-vendor/lib64/vendor.xiaomi.hardware.micharge@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.1.so
-vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.2.so
 
 # rootdir
 vendor/bin/ccci_fsd
@@ -1436,7 +1422,6 @@ vendor/bin/volte_md_status
 vendor/bin/volte_stack
 vendor/bin/volte_ua
 vendor/bin/vpud
-vendor/bin/vsimd
 vendor/bin/wfca
 vendor/bin/xcap
 vendor/data/misc/ProjectConfig.mk
@@ -1985,7 +1970,6 @@ vendor/lib/libmnl.so
 vendor/lib/libmp4enc_sa.ca7.so
 vendor/lib/libmp4enc_xa.ca7.so
 vendor/lib/libmsbc_mtk.so
-vendor/lib/libmt.so
 vendor/lib/libmtcloader.so
 vendor/lib/libneuroeara.so
 vendor/lib/libneuropilot_hal_utils.so
@@ -2199,8 +2183,6 @@ vendor/lib64/libmisound.so
 vendor/lib64/libmmprofile.so
 vendor/lib64/libmnetlink_v104.so
 vendor/lib64/libmsbc_mtk.so
-vendor/lib64/libmt.so
-vendor/lib64/libmt@1.2.so
 vendor/lib64/libmtcloader.so
 vendor/lib64/libneuroeara.so
 vendor/lib64/libneuron_adapter.so
