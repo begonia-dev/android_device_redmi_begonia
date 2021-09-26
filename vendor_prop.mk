@@ -374,7 +374,6 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.vendor.mtk_emmc_support=1 \
     ro.vendor.mtk_exchange_support=1 \
     ro.vendor.mtk_external_sim_only_slots=0 \
-    ro.vendor.mtk_f2fs_enable=0 \
     ro.vendor.mtk_fd_support=1 \
     ro.vendor.mtk_gps_support=1 \
     ro.vendor.mtk_hdr_video_support=1 \
