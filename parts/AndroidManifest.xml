@@ -39,7 +39,7 @@
         android:defaultToDeviceProtectedStorage="true"
         android:directBootAware="true">
 
-        <receiver android:name=".BootCompletedReceiver">
+        <receiver android:name=".BootCompletedReceiver" android:exported="false">
             <intent-filter android:priority="1000">
                 <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -47,12 +47,14 @@
         </receiver>
 
         <service android:name=".doze.DozeService"
+                 android:exported="true"
                  android:permission="XiaomiDozeService">
         </service>
 
         <activity
             android:name=".doze.DozeSettingsActivity"
-            android:label="@string/ambient_display_title">
+            android:label="@string/ambient_display_title"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
@@ -63,7 +65,8 @@
 
         <activity
             android:name=".thermal.ThermalActivity"
-            android:label="@string/thermal_title">
+            android:label="@string/thermal_title"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
@@ -80,7 +83,8 @@
 
         <activity
             android:name=".speaker.ClearSpeakerActivity"
-            android:label="@string/clear_speaker_title">
+            android:label="@string/clear_speaker_title"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
