@@ -317,6 +317,11 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.1.vendor \
     android.hardware.vibrator@1.2.vendor
 
+# VNDK
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v30/arm64/arch-arm-armv8-a/shared/vndk-sp/libunwindstack.so:$(TARGET_COPY_OUT_VENDOR)/lib/libunwindstack-v30.so \
+    prebuilts/vndk/v30/arm64/arch-arm64-armv8-a/shared/vndk-sp/libunwindstack.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libunwindstack-v30.so
+
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0.vendor \
