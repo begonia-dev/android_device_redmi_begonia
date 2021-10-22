@@ -340,6 +340,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.surface_flinger.primary_display_orientation=ORIENTATION_0 \
     ro.surface_flinger.vsync_event_phase_offset_ns=8300000 \
     ro.surface_flinger.vsync_sf_event_phase_offset_ns=8300000 \
+    ro.surface_flinger.running_without_sync_framework=true \
     ro.telephony.default_network=10,10,10,10 \
     ro.telephony.iwlan_operation_mode=default \
     ro.telephony.sim.count=2 \
