@@ -853,19 +853,13 @@ system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 -system_ext/framework/com.android.hotwordenrollment.common.util.jar
 
 # Keymaster
-vendor/bin/hw/android.hardware.keymaster@4.0-service.beanpod
 vendor/bin/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-service
-vendor/etc/init/android.hardware.keymaster@4.0-service.beanpod.rc
 vendor/etc/init/vendor.mediatek.hardware.keymaster_attestation@1.1-service.rc
 vendor/lib/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
 vendor/lib/libkeystore-wifi-hidl.so
-vendor/lib/vendor.mediatek.hardware.keymaster_attestation@1.0.so
-vendor/lib/vendor.mediatek.hardware.keymaster_attestation@1.1.so
 vendor/lib64/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
 vendor/lib64/libkeystore-engine-wifi-hidl.so
 vendor/lib64/libkeystore-wifi-hidl.so
-vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
-vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
 
 # Lights
 vendor/bin/hw/android.hardware.lights-service.mediatek
