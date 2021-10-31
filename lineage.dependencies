@@ -7,9 +7,5 @@
   {
     "repository" : "vendor_redmi_begonia",
     "target_path": "vendor/redmi/begonia"
-  },
-  {
-    "repository" : "vendor_redmi_begonia-firmware",
-    "target_path": "vendor/redmi/begonia-firmware"
   }
 ]
