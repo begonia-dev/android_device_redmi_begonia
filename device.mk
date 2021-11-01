@@ -14,6 +14,8 @@ PRODUCT_SOONG_NAMESPACES += \
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@6.0.vendor \
+    android.hardware.audio.service \
+    android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
     android.hardware.audio.common@6.0-util \
     android.hardware.soundtrigger@2.3-impl \
