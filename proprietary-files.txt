@@ -2168,7 +2168,6 @@ vendor/lib64/libfeature_lmv.so
 vendor/lib64/libfeature_rss.so
 vendor/lib64/libfft_vendor.so
 vendor/lib64/libfile_op.so
-vendor/lib64/libfmq.so
 vendor/lib64/libforkexecwrap.so
 vendor/lib64/libfpspolicy.so
 vendor/lib64/libfvaudio.so
