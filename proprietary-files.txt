@@ -2026,6 +2026,7 @@ vendor/lib/libteeclientjni@1.1.so
 vendor/lib/libtflite_mtk.so
 vendor/lib/libtflite_mtk_static_R.so
 vendor/lib/libthha.so
+vendor/lib/libtinyxml.so
 vendor/lib/libtlcWidevineModularDrm.so
 vendor/lib/libudf.so
 vendor/lib/libvc1dec_sa.ca7.so
@@ -2244,6 +2245,7 @@ vendor/lib64/libteeclientjni@1.1.so
 vendor/lib64/libtflite_mtk.so
 vendor/lib64/libtflite_mtk_static_R.so
 vendor/lib64/libthha.so
+vendor/lib64/libtinyxml.so
 vendor/lib64/libtlcWidevineModularDrm.so
 vendor/lib64/libudf.so
 vendor/lib64/libvcodec_oal.so
