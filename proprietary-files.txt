@@ -1098,15 +1098,6 @@ vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 bin/vtservice
 etc/apns-conf.xml:product/etc/apns-conf.xml
 etc/init/init.vtservice.rc
--framework/mediatek-common.jar
--framework/mediatek-framework.jar
--framework/mediatek-ims-base.jar
--framework/mediatek-ims-common.jar
-framework/mediatek-ims-extension-plugin.jar
-framework/mediatek-ims-legacy.jar
--framework/mediatek-telecom-common.jar
--framework/mediatek-telephony-base.jar
--framework/mediatek-telephony-common.jar
 lib/libcomutils.so
 lib/libimsma.so
 lib/libimsma_adapt.so
