@@ -56,10 +56,6 @@ PRODUCT_PACKAGES += \
     libldacBT_dec \
     libbtconfigstore
 
-# Camera
-PRODUCT_PACKAGES += \
-    Snap
-
 # Dex
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI
