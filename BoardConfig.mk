@@ -45,7 +45,6 @@ TARGET_USES_UEFI := true
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6785
-TARGET_BOARD_PLATFORM_GPU := mali-g76mc4
 
 # Kernel
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive
