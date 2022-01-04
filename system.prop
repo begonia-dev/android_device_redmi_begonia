@@ -25,6 +25,16 @@ vendor.camera.aux.packageblacklist=org.telegram.messenger,com.microsoft.teams,co
 ro.charger.enable_suspend=true
 persist.vendor.quick.charge=1
 
+# Dex
+persist.bg.dexopt.enable=true
+dalvik.vm.dexopt.secondary=true
+pm.dexopt.install=speed-profile
+pm.dexopt.bg-dexopt=speed-profile
+pm.dexopt.boot=verify
+pm.dexopt.first-boot=quicken
+dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.dex2oat-threads=6
+
 # Display
 ro.vendor.all_modes.colorpick_adjust=true
 ro.vendor.cabc.enable=true
