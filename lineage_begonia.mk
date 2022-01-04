@@ -22,6 +22,14 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit some extras stuff
 $(call inherit-product-if-exists, vendor/extras/extras.mk)
 
+# Screen density
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+
+# Boot Animation
+TARGET_SCREEN_HEIGHT := 2340
+TARGET_SCREEN_WIDTH := 1080
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := begonia
 PRODUCT_NAME := lineage_begonia
