@@ -63,6 +63,7 @@ ro.product.property_source_order=odm,vendor,product,system
 persist.sys.mdlog_dumpback=2
 
 # Radio
+persist.sys.fflag.override.settings_provider_model=false
 vendor.rild.libpath=mtk-ril.so
 vendor.rild.libargs=-d /dev/ttyC0
 
