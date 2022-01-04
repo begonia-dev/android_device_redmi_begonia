@@ -69,6 +69,9 @@ vendor.rild.libargs=-d /dev/ttyC0
 # Sensors
 persist.radio.sar_sar_sensor=true
 
+# System
+persist.sys.binary_xml=false
+
 # Usb
 ro.sys.usb.mtp.whql.enable=0
 ro.sys.usb.storage.type=mtp
