@@ -27,7 +27,6 @@ public class ClearSpeakerActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getActionBar().setDisplayHomeAsUpEnabled(true);
 
         Fragment fragment = getFragmentManager().findFragmentById(android.R.id.content);
         ClearSpeakerFragment clearSpeakerFragment;
@@ -42,7 +41,7 @@ public class ClearSpeakerActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            finish();
+            finishAfterTransition();
             return true;
         }
         return super.onOptionsItemSelected(item);
