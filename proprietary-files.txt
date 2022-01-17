@@ -1827,9 +1827,6 @@ vendor/etc/mtk_omx_core.cfg
 vendor/etc/nhw
 vendor/etc/pdc.txt
 vendor/etc/pm_test_item_config.xml
-vendor/etc/power_app_cfg.xml
-vendor/etc/powercontable.xml
-vendor/etc/powerscntbl.xml
 vendor/etc/screen_light.xml
 vendor/etc/slp_conf
 vendor/etc/smsdbvisitor.xml
