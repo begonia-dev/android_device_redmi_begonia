@@ -15,6 +15,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     debug.mediatek.disp_decompress=1 \
     debug.mediatek.game_pq_enable=1 \
     debug.mtk_tflite.target_nnapi=29 \
+    debug.renderengine.backend=skiaglthreaded \
     debug.sf.disable_backpressure=1 \
     debug.sf.latch_unsignaled=1 \
     drm.service.enabled=true \
