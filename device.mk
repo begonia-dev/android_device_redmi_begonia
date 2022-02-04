@@ -251,11 +251,8 @@ PRODUCT_PACKAGES += \
     init.project.rc \
     init.sensor_1_0.rc \
     fstab.mt6785 \
+    fstab.mt6785_ramdisk \
     ueventd.mt6785.rc
-
-# Ramdisk for kernel
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.mt6785:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6785
 
 # Radio
 PRODUCT_PACKAGES += \
