@@ -1,6 +1,3 @@
-# APEX
-ro.apex.updatable=false
-
 # Audio
 ro.audio.silent=0
 
