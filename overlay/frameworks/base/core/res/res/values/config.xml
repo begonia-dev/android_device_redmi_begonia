@@ -406,8 +406,7 @@
     </string-array>
 
     <!-- Height of the status bar -->
-    <dimen name="status_bar_height_portrait">78.0px</dimen>
-    <dimen name="status_bar_height_landscape">24.0dp</dimen>
+    <dimen name="status_bar_height">78.0px</dimen>
 
     <!-- Rounded corner padding and radius -->
     <dimen name="rounded_corner_radius_top">95.0px</dimen>
