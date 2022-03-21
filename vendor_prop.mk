@@ -19,6 +19,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     debug.sf.latch_unsignaled=1 \
     drm.service.enabled=true \
     init.userspace_reboot.is_supported=true \
+    media.stagefright.thumbnail.prefer_hw_codecs=true \
     persist.adb.nonblocking_ffs=0 \
     persist.audio.button_jack.profile=volume \
     persist.audio.button_jack.switch=0 \
