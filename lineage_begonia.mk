@@ -18,6 +18,7 @@ $(call inherit-product, device/redmi/begonia/device.mk)
 
 # Inherit some common LineageOS stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+TARGET_SUPPORTS_QUICK_TAP := true
 
 # Inherit some extras stuff
 $(call inherit-product-if-exists, vendor/extras/extras.mk)
