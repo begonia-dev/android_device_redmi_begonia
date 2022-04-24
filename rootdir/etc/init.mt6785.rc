@@ -957,6 +957,9 @@ service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.1-service
 on property:ro.boot.product.hardware.sku=begonia
     start vendor.nfc_hal_service
 
+on property:ro.boot.product.hardware.sku=""
+    stop vendor.nfc_hal_service
+
 on property:persist.sys.begonia.dt2w=0
     exec /system/bin/sendevent /dev/input/event2 0 1 4
 
