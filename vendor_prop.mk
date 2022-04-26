@@ -319,7 +319,6 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.config.alarm_alert=Alarm_Classic.ogg \
     ro.config.notification_sound=pixiedust.ogg \
     ro.config.ringtone=Ring_Synth_04.ogg \
-    ro.control_privapp_permissions=log \
     ro.crypto.volume.filenames_mode=aes-256-cts \
     ro.frp.pst=/dev/block/platform/bootdevice/by-name/frp \
     ro.hardware.egl=meow \
