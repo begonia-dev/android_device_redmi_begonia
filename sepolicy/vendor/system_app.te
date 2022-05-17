@@ -1,2 +1,6 @@
 allow system_app sysfs_zram:dir search;
 allow system_app sysfs_zram:file r_file_perms;
+
+# FM Radio
+get_prop(system_app, wmt_prop)
+get_prop(system_app, mtk_default_prop)

@@ -10,5 +10,9 @@
   {
     "repository" : "vendor_redmi_begonia-ims",
     "target_path": "vendor/redmi/begonia-ims"
+  },
+  {
+    "repository" : "android_packages_apps_MtkFMRadio",
+    "target_path": "packages/apps/MtkFMRadio",
   }
 ]
