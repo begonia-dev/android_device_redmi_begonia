@@ -1098,6 +1098,32 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.5.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.6.so
 vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
+# MTK Engineering Mode
+app/LocationEM2/LocationEM2.apk|669c55e4067d74005d8d2b01d8245e0791116a20
+app/YGPS/YGPS.apk|5c49e0f668b21231260fc0c40285a38946281c95
+priv-app/EngineerMode/EngineerMode.apk|4a5051feaba14fa2bd43ff141034653a1189fefa
+vendor/app/EmCamera/EmCamera.apk|71154894a522f0fac741e08cca4fbe17c6ce2b70
+vendor/app/EmCamera/lib/arm64/libem_camera_jni.so|904c222b39f4a18e1843d68ce65a805d99b89c1a
+lib/libaudio_param_parser-sys.so
+lib/libaudiotoolkit.so
+lib/libaudioutilmtk.so
+lib/libem_audio_jni.so
+lib/libem_gpio_jni.so|5e41da0c72c179c74e6ad343fd58c8f2cdb56778
+lib/libem_support_jni.so
+lib/libem_usb_jni.so
+lib/libem_wifi_jni.so
+lib/vendor.mediatek.hardware.audio@5.1.so|9d423613d186b4d3ed66a84d2ea0adb03677e9ca
+lib64/libaudio_param_parser-sys.so
+lib64/libaudiotoolkit.so
+lib64/libaudioutilmtk.so
+lib64/libem_audio_jni.so
+lib64/libem_gpio_jni.so|fed66d4d453f86b6857237b6e54c80421c1367ac
+lib64/libem_support_jni.so
+lib64/libem_usb_jni.so
+lib64/libem_wifi_jni.so
+lib64/vendor.mediatek.hardware.audio@5.1.so|e05da71cb22e9bb5c81c60356cf2b103f57b29f2
+vendor/lib64/libem_camera_jni.so|904c222b39f4a18e1843d68ce65a805d99b89c1a
+
 # MTK-IMS
 bin/vtservice
 etc/apns-conf.xml:product/etc/apns-conf.xml
