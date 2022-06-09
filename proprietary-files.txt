@@ -813,6 +813,9 @@ vendor/firmware/soc3_0_ram_mcu_e1_hdr.bin
 vendor/firmware/txpowerctrl.cfg
 vendor/firmware/wifi.cfg
 
+# FmRadio
+vendor/lib/modules/fmradio_drv.ko
+
 # GPS
 vendor/bin/hw/android.hardware.gnss@2.1-service-mediatek
 vendor/etc/init/android.hardware.gnss@2.1-service-mediatek.rc
