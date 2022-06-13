@@ -1124,6 +1124,16 @@ lib64/libvcodec_capenc.so
 system_ext/lib/vendor.mediatek.hardware.videotelephony@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
+# MTK Media Extractors
+lib64/extractors/libmtkadpcmextractor.so
+lib64/extractors/libmtkalacextractor.so
+lib64/extractors/libmtkapeextractor.so
+lib64/extractors/libmtkasfextractor.so
+lib64/extractors/libmtkaviextractor.so
+lib64/extractors/libmtkflvextractor.so
+lib64/extractors/libmtkmp3extractor.so
+lib64/extractors/libmtkmpeg2extractor.so
+
 # NFC
 vendor/etc/nxp/Phone_bt_bt.bin
 vendor/etc/nxp/Phone_hsmic_hs.bin
