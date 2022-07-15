@@ -1,0 +1,15 @@
+-keep class org.lineageos.settings.* {
+  *;
+}
+
+-keep class org.lineageos.settings.speaker.* {
+  *;
+}
+
+-keep class org.lineageos.settings.thermal.* {
+  *;
+}
+
+-keep class org.lineageos.settings.haptic.* {
+  *;
+}
