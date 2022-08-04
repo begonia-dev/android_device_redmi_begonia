@@ -25,8 +25,6 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-    <protected-broadcast android:name="com.android.systemui.doze.pulse" />
-
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/device_settings_app_name"
@@ -41,23 +39,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
-
-        <service android:name=".doze.DozeService"
-                 android:exported="true"
-                 android:permission="XiaomiDozeService">
-        </service>
-
-        <activity
-            android:name=".doze.DozeSettingsActivity"
-            android:label="@string/ambient_display_title"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.android.settings.action.IA_SETTINGS" />
-            </intent-filter>
-            <meta-data
-                android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.display" />
-        </activity>
 
         <activity
             android:name=".thermal.ThermalActivity"

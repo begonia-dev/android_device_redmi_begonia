@@ -18,8 +18,4 @@ android_app {
         "org.lineageos.settings.resources",
         "SettingsLib",
     ],
-
-    optimize: {
-        proguard_flags_files: ["proguard.flags"],
-    },
 }
