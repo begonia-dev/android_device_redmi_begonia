@@ -27,6 +27,7 @@ namespace vibrator {
 const std::string kVibratorState    = "/sys/class/leds/vibrator/state";
 const std::string kVibratorDuration = "/sys/class/leds/vibrator/duration";
 const std::string kVibratorActivate = "/sys/class/leds/vibrator/activate";
+const std::string kVibratorStrength = "/sys/kernel/thunderquake_engine/level";
 
 static std::map<Effect, int32_t> vibEffects = {
     { Effect::CLICK, 50 },
@@ -35,8 +36,15 @@ static std::map<Effect, int32_t> vibEffects = {
     { Effect::TICK, 32 }
 };
 
+static std::map<EffectStrength, int32_t> vibStrengths = {
+    { EffectStrength::LIGHT, 0},
+    { EffectStrength::MEDIUM, 4},
+    { EffectStrength::STRONG, 9}
+};
+
 class Vibrator : public BnVibrator {
 public:
+    Vibrator();
     ndk::ScopedAStatus getCapabilities(int32_t* _aidl_return) override;
     ndk::ScopedAStatus off() override;
     ndk::ScopedAStatus on(int32_t timeoutMs,
@@ -71,7 +79,10 @@ public:
 private:
     static ndk::ScopedAStatus setNode(const std::string path, const std::string value);
     static ndk::ScopedAStatus setNode(const std::string path, const int32_t value);
+    static bool nodeExists(const std::string path);
+
     ndk::ScopedAStatus activate(const int32_t timeoutMs);
+    bool mVibratorStrengthSupported;
 };
 
 }  // namespace vibrator
