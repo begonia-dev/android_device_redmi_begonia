@@ -25,6 +25,10 @@ namespace android {
 namespace hardware {
 namespace vibrator {
 
+Vibrator::Vibrator() {
+    mVibratorStrengthSupported = nodeExists(kVibratorStrength);
+}
+
 ndk::ScopedAStatus Vibrator::getCapabilities(int32_t* _aidl_return) {
     LOG(INFO) << "Vibrator reporting capabilities";
     *_aidl_return = IVibrator::CAP_ON_CALLBACK | IVibrator::CAP_PERFORM_CALLBACK;
@@ -74,6 +78,12 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength strength,
 
     if (vibEffects.find(effect) == vibEffects.end())
         return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
+
+    if (mVibratorStrengthSupported) {
+        status = setNode(kVibratorStrength, vibStrengths[strength]);
+        if (!status.isOk())
+            return status;
+    }
 
     timeoutMs = vibEffects[effect];
 
@@ -198,6 +208,11 @@ ndk::ScopedAStatus Vibrator::setNode(const std::string path, const std::string v
 
 ndk::ScopedAStatus Vibrator::setNode(std::string path, const int32_t value) {
     return setNode(path, std::to_string(value));
+}
+
+bool Vibrator::nodeExists(const std::string path) {
+    std::ofstream file(path);
+    return file.is_open();
 }
 
 ndk::ScopedAStatus Vibrator::activate(const int32_t timeoutMs) {
