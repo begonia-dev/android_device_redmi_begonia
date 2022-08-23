@@ -1186,10 +1186,6 @@ lib64/libpowerhalwrap.so
 lib64/libpowerhalwrap_jni.so
 lib64/libpowerkeeper_jni.so
 
-# Power NDK - from AOSP-Master
-vendor/lib/android.hardware.power-V1-ndk_platform.so|6557c6f026ecca479be50a34f67a06012355f886
-vendor/lib64/android.hardware.power-V1-ndk_platform.so|62678973010870dbb54340dabadd63f09fd1c4b1
-
 # Power-Hardware
 system_ext/lib64/vendor.mediatek.hardware.power@2.0.so
 system_ext/lib64/vendor.mediatek.hardware.power@2.1.so
