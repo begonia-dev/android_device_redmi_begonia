@@ -24,6 +24,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     debug.sf.hwc.min.duration=23000000 \
     debug.sf.late.app.duration=20000000 \
     debug.sf.late.sf.duration=27600000 \
+    debug.sf.enable_transaction_tracing=false \
     debug.sf.use_phase_offsets_as_durations=1 \
     drm.service.enabled=true \
     init.userspace_reboot.is_supported=true \
