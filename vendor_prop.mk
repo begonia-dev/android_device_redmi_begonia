@@ -281,6 +281,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     persist.log.tag.GED=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.hwcomposer=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.netd=$(VENDOR_LOG_LEVEL) \
+    persist.log.tag.gralloc4=$(VENDOR_LOG_LEVEL) \
     persist.radio.multisim.config=dsds \
     persist.vendor.camera3.operationMode.superNightMode=0x800A \
     persist.vendor.camera3.pipeline.bufnum.base.imgo=4 \
