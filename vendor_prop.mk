@@ -27,6 +27,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     debug.sf.enable_transaction_tracing=false \
     debug.sf.predict_hwc_composition_strategy=0 \
     debug.sf.use_phase_offsets_as_durations=1 \
+    ro.surface_flinger.uclamp.min=130 \
     drm.service.enabled=true \
     init.userspace_reboot.is_supported=true \
     media.stagefright.thumbnail.prefer_hw_codecs=true \
