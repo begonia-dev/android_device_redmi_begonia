@@ -3,3 +3,7 @@ genfscon proc /last_kmsg u:object_r:proc_last_kmsg:s0
 
 # Leds
 genfscon sysfs /devices/platform/11016000.i2c5/i2c-5/5-0034/mt6360_pmu_rgbled.4.auto/leds u:object_r:sysfs_leds:s0
+
+# Performance
+genfscon sysfs /devices/system/cpu/cpufreq/mtk/.cluster_(min|max)_freq                                                          u:object_r:sysfs_mtk_cpufreq:s0
+genfscon sysfs /kernel/gpu/gpu_(min|max)_clock                                                                                  u:object_r:sysfs_mtk_gpufreq:s0

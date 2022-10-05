@@ -12,5 +12,9 @@ type sysfs_light, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_graphics, sysfs_type, fs_type, mlstrustedobject;
 type sysfs_fpsinfo, sysfs_type, fs_type;
 
+# Performance
+type sysfs_mtk_cpufreq, fs_type, sysfs_type;
+type sysfs_mtk_gpufreq, fs_type, sysfs_type;
+
 # PPS
 type pps_socket, file_type;
