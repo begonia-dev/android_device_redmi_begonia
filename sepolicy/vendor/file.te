@@ -2,9 +2,15 @@
 type fingerprint_data_file, file_type, data_file_type, core_data_file_type;
 type vendor_fingerprint_data_file, file_type, data_file_type;
 
+# Latency
+type latency_device, dev_type;
+
 # Last kernel
 type proc_last_kmsg, fs_type, proc_type;
 
 type sysfs_light, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_graphics, sysfs_type, fs_type, mlstrustedobject;
 type sysfs_fpsinfo, sysfs_type, fs_type;
+
+# PPS
+type pps_socket, file_type;

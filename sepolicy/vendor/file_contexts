@@ -15,9 +15,13 @@
 /vendor/bin/hw/vendor\.xiaomi\.hardware\.displayfeature@1\.0-service    u:object_r:hal_displayfeature_default_exec:s0
 /vendor/bin/hw/android\.hardware\.vibrator-service\.begonia             u:object_r:hal_vibrator_default_exec:s0
 
+# Latency
+/dev/cpu_dma_latency                                                                                    u:object_r:latency_device:s0
+
 # Mi Thermald
 /vendor/bin/mi_thermald       u:object_r:mi_thermald_exec:s0
 /data/vendor/thermal(/.*)?    u:object_r:thermal_data_file:s0
 
 # Power
 /(vendor|system/vendor)/bin/hw/vendor\.mediatek\.hardware\.mtkpower@1\.2-service\.stub                  u:object_r:mtk_hal_power_exec:s0
+/vendor/bin/hw/android\.hardware\.power-service\.mediatek-libperfmgr                                    u:object_r:hal_power_default_exec:s0
