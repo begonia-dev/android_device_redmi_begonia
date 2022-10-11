@@ -41,7 +41,6 @@ PRODUCT_PACKAGES += \
     libreverbwrapper \
     libvisualizer \
     libtinycompress \
-    libtinycompress.vendor \
     libaudiofoundation \
     libaudiofoundation.vendor
 
@@ -61,11 +60,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
-
-# Bluetooth
-PRODUCT_PACKAGES += \
-    libldacBT_dec \
-    libbtconfigstore
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -131,10 +125,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service
-
-# Init
-PRODUCT_PACKAGES += \
-    init.mtk.rc
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -267,8 +257,6 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    partition_permission.sh \
-    throttle.sh \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6785.rc \
