@@ -469,6 +469,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.has_HDR_display=true \
     ro.surface_flinger.has_wide_color_display=true
 
-# Zygote preforking
+# Zygote
 PRODUCT_PROPERTY_OVERRIDES += \
+    zygote.critical_window.minute=10 \
     persist.device_config.runtime_native.usap_pool_enabled=true
