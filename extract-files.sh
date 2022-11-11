@@ -66,6 +66,9 @@ function blob_fixup {
         vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service)
             "${PATCHELF}" --replace-needed "android.hardware.power-V1-ndk_platform.so" "android.hardware.power-V1-ndk.so" "${2}"
             ;;
+        vendor/lib/libMtkOmxVdecEx.so)
+            "${PATCHELF}" --replace-needed "libui.so" "libui-v32.so" "$2"
+            ;;
         vendor/lib64/android.hardware.power-service-mediatek.so)
             "${PATCHELF}" --replace-needed "android.hardware.power-V1-ndk_platform.so" "android.hardware.power-V1-ndk.so" "${2}"
             ;;
