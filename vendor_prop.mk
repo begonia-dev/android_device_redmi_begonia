@@ -31,6 +31,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     debug.mediatek.game_pq_enable=1 \
     debug.mtk_tflite.target_nnapi=29 \
     debug.renderengine.backend=skiaglthreaded \
+    debug.sf.disable_client_composition_cache=1 \
     debug.sf.latch_unsignaled=1 \
     debug.sf.early.app.duration=20000000 \
     debug.sf.early.sf.duration=27600000 \
