@@ -66,9 +66,6 @@ function blob_fixup {
         vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service)
             "${PATCHELF}" --replace-needed "android.hardware.power-V1-ndk_platform.so" "android.hardware.power-V1-ndk.so" "${2}"
             ;;
-        vendor/lib/libMtkOmxVdecEx.so)
-            "${PATCHELF}" --replace-needed "libui.so" "libui-v32.so" "$2"
-            ;;
         vendor/lib64/android.hardware.power-service-mediatek.so)
             "${PATCHELF}" --replace-needed "android.hardware.power-V1-ndk_platform.so" "android.hardware.power-V1-ndk.so" "${2}"
             ;;
@@ -78,8 +75,6 @@ function blob_fixup {
         vendor/lib64/libmtkcam_stdutils.so)
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v30.so" "${2}"
             ;;
-        vendor/lib/hw/audio.primary.mt6785.so)
-            ;&
         vendor/lib64/hw/audio.primary.mt6785.so)
             "${PATCHELF}" --replace-needed "libmedia_helper.so" "libmedia_helper-v30.so" "${2}"
             "${PATCHELF}" --replace-needed "libalsautils.so" "libalsautils-v30.so" "${2}"

@@ -3,6 +3,7 @@ allow gmscore_app mtk_cmdq_device:chr_file rw_file_perms;
 allow gmscore_app mtk_mdp_device:chr_file rw_file_perms;
 
 get_prop(gmscore_app, render_prop)
+get_prop(gmscore_app, vendor_debug_prop)
 
 # Silent harmless sepolicy
 dontaudit gmscore_app hal_memtrack_hwservice:hwservice_manager find;

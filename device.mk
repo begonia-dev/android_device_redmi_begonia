@@ -60,6 +60,18 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
+# APN
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/etc/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
+
+# Graphene Camera
+PRODUCT_PACKAGES += \
+    GrapheneOSCamera
+
+# Remove Packages
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.device@3.3.vendor \
@@ -71,12 +83,30 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.6.vendor
 
 # Dex
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI
+# Dex pre-opt
+PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := false
+WITH_DEXPREOPT_DEBUG_INFO := false
 
-# Device-specific settings
-PRODUCT_PACKAGES += \
-    XiaomiParts
+# Don't build debug for host or device
+PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
+PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
+ART_BUILD_TARGET_NDEBUG := true
+ART_BUILD_TARGET_DEBUG := false
+ART_BUILD_HOST_NDEBUG := true
+ART_BUILD_HOST_DEBUG := false
+
+# Recommend using the non debug dexpreopter
+USE_DEX2OAT_DEBUG := false
+
+# Dex pre-opt for speed
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    SystemUI \
+    Launcher3QuickStep \
+    SettingsInlelligence \
+    SettingsProvider \
+    Settings
 
 # Display
 PRODUCT_PACKAGES += \
@@ -108,6 +138,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     MtkFMRadio
 
+# Updater
+PRODUCT_PACKAGES += \
+    Updater
+
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service \
@@ -136,7 +170,29 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/uinput-fpc.kl:system/usr/keylayout/uinput-fpc.kl \
-    $(LOCAL_PATH)/configs/keylayout/uinput-goodix.kl:system/usr/keylayout/uinput-goodix.kl
+    $(LOCAL_PATH)/configs/keylayout/uinput-goodix.kl:system/usr/keylayout/uinput-goodix.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_045e_Product_0b12.kl:system/usr/keylayout/Vendor_045e_Product_0b12.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_045e_Product_02a1.kl:system/usr/keylayout/Vendor_045e_Product_02a1.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_045e_Product_02d1.kl:system/usr/keylayout/Vendor_045e_Product_02d1.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_045e_Product_02e0.kl:system/usr/keylayout/Vendor_045e_Product_02e0.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_045e_Product_02e3.kl:system/usr/keylayout/Vendor_045e_Product_02e3.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_045e_Product_02e6.kl:system/usr/keylayout/Vendor_045e_Product_02e6.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_045e_Product_02ea.kl:system/usr/keylayout/Vendor_045e_Product_02ea.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_045e_Product_02fd.kl:system/usr/keylayout/Vendor_045e_Product_02fd.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_028e.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_045e_Product_028f.kl:system/usr/keylayout/Vendor_045e_Product_028f.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_045e_Product_0291.kl:system/usr/keylayout/Vendor_045e_Product_0291.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_045e_Product_0719.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_054c_Product_0ce6.kl:system/usr/keylayout/Vendor_054c_Product_0ce6.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_054c_Product_05c4.kl:system/usr/keylayout/Vendor_054c_Product_05c4.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_054c_Product_09cc.kl:system/usr/keylayout/Vendor_054c_Product_09cc.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_054c_Product_0268.kl:system/usr/keylayout/Vendor_054c_Product_0268.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_057e_Product_2009.kl:system/usr/keylayout/Vendor_057e_Product_2009.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_0079_Product_0011.kl:system/usr/keylayout/Vendor_0079_Product_0011.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_146b_Product_0d01.kl:system/usr/keylayout/Vendor_146b_Product_0d01.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_0810_Product_0001.kl:system/usr/keylayout/Vendor_0810_Product_0001.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_1038_Product_1412.kl:system/usr/keylayout/Vendor_1038_Product_1412.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_0e6f_Product_f501.kl:system/usr/keylayout/Vendor_0e6f_Product_f501.kl
 
 # IR
 PRODUCT_PACKAGES += \
@@ -181,8 +237,7 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -225,6 +280,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/android.hardware.wifi.passpoint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.passpoint.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.freeform_window_management.xml \
     frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml \
@@ -329,9 +385,6 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator-service.begonia
 
 # VNDK
-PRODUCT_PACKAGES += \
-    libui-v32
-
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v30/arm64/arch-arm-armv8-a/shared/vndk-core/libmedia_helper.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmedia_helper-v30.so \
     prebuilts/vndk/v30/arm64/arch-arm-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libutils-v30.so \

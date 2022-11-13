@@ -902,6 +902,11 @@ on property:sys.boot_completed=1
     write /sys/block/mmcblk0/queue/read_ahead_kb 512
     write /sys/block/mmcblk0/queue/nr_requests 128
 
+#enable thundercharge
+on property:sys.boot_completed=1
+
+    write /sys/kernel/thundercharge_control/enabled 1
+
 # start EAS+
 on property:sys.boot_completed=1
 
@@ -975,3 +980,11 @@ on boot
 
     # Disable serial console
     stop console
+
+on property:sys.boot_completed=1
+    stop bootanim
+
+on property:persist.vendor.mtk_aurisys_framework_support=*
+    # Fix VoIP apps call echo
+    stop audioserver
+    start audioserver

@@ -1,11 +1,13 @@
 # Audio
 ro.audio.silent=0
 audio.deep_buffer.media=false
-ro.config.vc_call_vol_steps=7
-ro.config.media_vol_steps=15
+ro.config.vc_call_vol_steps=10
+ro.config.media_vol_steps=7
 
 # Blur
+ro.surface_flinger.supports_background_blur=1
 persist.sys.sf.disable_blurs=1
+ro.sf.blurs_are_expensive=1
 
 # Brand
 Build.BRAND=MTK
@@ -24,6 +26,8 @@ persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera,com
 # Charger
 ro.charger.enable_suspend=true
 persist.vendor.quick.charge=1
+ro.charger.disable_init_blank=1
+ro.product.charger.unplugged_shutdown_time=1000
 
 # Dex
 persist.bg.dexopt.enable=true
@@ -33,8 +37,15 @@ pm.dexopt.bg-dexopt=speed-profile
 pm.dexopt.boot=verify
 pm.dexopt.first-boot=quicken
 dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.dex2oat-threads=8
+dalvik.vm.boot-dex2oat-threads=8
+dalvik.vm.image-dex2oat-threads=8
+ro.sys.fw.dex2oat_thread_count=8
+dalvik.vm.image-dex2oat-filter=speed-profile
+dalvik.vm.dex2oat-filter=speed-profile
 dalvik.vm.dex2oat64.enabled=true
-dalvik.vm.dex2oat-threads=6
 
 # Display
 ro.vendor.all_modes.colorpick_adjust=true
@@ -45,6 +56,7 @@ ro.vendor.xiaomi.bl.poll=true
 ro.vendor.whitepoint_calibration_enable=false
 vendor.displayfeature.entry.enable=true
 vendor.displayfeature_hidl=true
+debug.force_no_blanking=true
 
 # Graphics
 ro.opengles.version=196610
@@ -54,6 +66,9 @@ sys.ipo.disable=1
 
 # Keys
 qemu.hw.mainkeys=0
+
+# FUSE passthrough
+persist.sys.fuse.passthrough.enable=true
 
 # Kernel
 ro.kernel.zio=38,108,105,16
@@ -101,3 +116,4 @@ wifi.tethering.interface=ap0
 
 # Zygote
 ro.zygote.preload.enable=0
+

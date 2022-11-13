@@ -373,9 +373,16 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.soc.manufacturer=Mediatek \
     ro.soc.model=MT6785 \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
-    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
+    ro.surface_flinger.max_frame_buffer_acquired_buffers=9 \
     ro.surface_flinger.primary_display_orientation=ORIENTATION_0 \
-    ro.surface_flinger.running_without_sync_framework=true \
+    debug.sf.use_phase_offsets_as_durations=1 \
+    debug.sf.late.sf.duration=27600000 \
+    debug.sf.late.app.duration=20000000 \
+    debug.sf.early.sf.duration=27600000 \
+    debug.sf.early.app.duration=20000000 \
+    debug.sf.earlyGl.sf.duration=27600000 \
+    debug.sf.earlyGl.app.duration=20000000 \
+    debug.sf.hwc.min.duration=23000000 \
     ro.telephony.default_network=10,10,10,10 \
     ro.telephony.iwlan_operation_mode=default \
     ro.telephony.sim.count=2 \
@@ -411,7 +418,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.vendor.mtk_gps_support=1 \
     ro.vendor.mtk_hdr_video_support=1 \
     ro.vendor.mtk_hifiaudio_support=1 \
-    ro.vendor.mtk_log_hide_gps=0 \
+    ro.vendor.mtk_log_hide_gps=1 \
     ro.vendor.mtk_lte_support=1 \
     ro.vendor.mtk_mcf_support=1 \
     ro.vendor.mtk_md1_support=12 \
@@ -465,10 +472,12 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     persist.dbg.vt_avail_ovr=1 \
     persist.dbg.wfc_avail_ovr=1
 
-# SurfaceFlinger
+# Colors
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.has_HDR_display=true \
-    ro.surface_flinger.has_wide_color_display=true
+    ro.surface_flinger.has_wide_color_display=true \
+    persist.sys.sf.color_saturation=1.1 \
+    persist.sys.sf.native_mode=0
 
 # Zygote
 PRODUCT_PROPERTY_OVERRIDES += \
