@@ -3,3 +3,5 @@ get_prop(vendor_init, persist_recovery_update_prop)
 get_prop(vendor_init, vts_status_prop)
 
 allow vendor_init { fingerprint_data_file vendor_fingerprint_data_file }:dir { rw_dir_perms relabelto setattr };
+allow vendor_init proc_sched:file write;
+allow vendor_init proc_net:file write;

@@ -1,8 +1,11 @@
+# APEX
+ro.apex.updatable=false
+
 # Audio
 ro.audio.silent=0
 audio.deep_buffer.media=false
-ro.config.vc_call_vol_steps=10
-ro.config.media_vol_steps=7
+ro.config.vc_call_vol_steps=7
+ro.config.media_vol_steps=15
 
 # Blur
 ro.surface_flinger.supports_background_blur=1
@@ -37,15 +40,8 @@ pm.dexopt.bg-dexopt=speed-profile
 pm.dexopt.boot=verify
 pm.dexopt.first-boot=quicken
 dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5
-dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5
-dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5
-dalvik.vm.dex2oat-threads=8
-dalvik.vm.boot-dex2oat-threads=8
-dalvik.vm.image-dex2oat-threads=8
-ro.sys.fw.dex2oat_thread_count=8
-dalvik.vm.image-dex2oat-filter=speed-profile
-dalvik.vm.dex2oat-filter=speed-profile
 dalvik.vm.dex2oat64.enabled=true
+dalvik.vm.dex2oat-threads=6
 
 # Display
 ro.vendor.all_modes.colorpick_adjust=true
@@ -70,8 +66,17 @@ qemu.hw.mainkeys=0
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
 
+# IMS
+persist.vendor.ims.disableADBLogs=1
+persist.vendor.ims.disableDebugLogs=1
+persist.vendor.ims.disableIMSLogs=1
+persist.vendor.ims.disableQXDMLogs=1
+
 # Kernel
 ro.kernel.zio=38,108,105,16
+
+# LMK
+ro.config.low_ram=false
 
 # Netflix
 ro.netflix.bsp_rev=MTK6785-18758-1
@@ -117,3 +122,10 @@ wifi.tethering.interface=ap0
 # Zygote
 ro.zygote.preload.enable=0
 
+# Zram
+ro.zram.mark_idle_delay_mins=60
+ro.zram.first_wb_delay_mins=180
+ro.zram.periodic_wb_delay_hours=24
+
+# Disable blur on app launch
+ro.launcher.blur.appLaunch=0

@@ -39,7 +39,7 @@ def AddImage(info, basename, dest, incremental):
   info.script.AppendExtra('package_extract_file("%s", "%s");' % (basename, dest))
 
 def OTA_InstallEnd(info, incremental):
-  info.script.Print("Patching vbmeta & dtbo Images...")
+  info.script.Print("Patching vbmeta and dtbo images...")
   AddImage(info, "vbmeta.img", "/dev/block/by-name/vbmeta", incremental)
   AddImage(info, "dtbo.img", "/dev/block/by-name/dtbo", incremental)
   Firmware_Images(info, incremental)
@@ -67,7 +67,7 @@ def Firmware_Images(info, incremental):
   pl_part = ['sda', 'sdb']
 
   fw_cmd = 'ifelse(getprop("ro.boot.hwc") == "India",\n(\n'
-  fw_cmd += 'ui_print("Flashing begoniain (Indian) Firmware...");\n'
+  fw_cmd += 'ui_print("Flashing begoniain (Indian) firmware...");\n'
 
   # Flash Indian Firmware
   AddImageOnly(info, "{}_in.img".format(pl), incremental, True)
@@ -86,7 +86,7 @@ def Firmware_Images(info, incremental):
   # END Flash Indian Firmware
 
   fw_cmd += '),\n(\n'
-  fw_cmd += 'ui_print("Flashing begonia (Global) Firmware...");\n'
+  fw_cmd += 'ui_print("Flashing begonia (Global) firmware...");\n'
 
   # Flash Global Firmware
   AddImageOnly(info, "{}.img".format(pl), incremental, True)
@@ -107,7 +107,7 @@ def Firmware_Images(info, incremental):
   fw_cmd += ')\n);\n'
 
   # Flash prebuilt recovery
-  fw_cmd += 'ui_print("Flashing Prebuilt Recovery...");\n'
+  fw_cmd += 'ui_print("Flashing prebuilt recovery...");\n'
   AddImageOnly(info, 'twrp.img', incremental, True)
   fw_cmd += 'package_extract_file("twrp.img", "/dev/block/bootdevice/by-name/recovery");'
 

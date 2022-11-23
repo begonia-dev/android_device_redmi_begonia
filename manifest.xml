@@ -248,11 +248,6 @@
         <fqname>@1.1::IUsbGadget/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.mediatek.hardware.apuware.apusys</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::INeuronApusys/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.mediatek.hardware.apuware.utils</name>
         <transport>hwbinder</transport>
         <version>1.0</version>

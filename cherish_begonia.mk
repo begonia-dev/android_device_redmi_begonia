@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021 The LineageOS Project
+# Copyright (C) 2021 The cherishOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -15,9 +15,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit from begonia device
 $(call inherit-product, device/redmi/begonia/device.mk)
 
-# Inherit some common cherishOS stuff
+# Inherit some common riceDroid stuff
 $(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 TARGET_SUPPORTS_QUICK_TAP := true
+
 
 # Inherit some extras stuff
 $(call inherit-product-if-exists, vendor/extras/extras.mk)
@@ -29,8 +30,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Boot Animation
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_FACE_UNLOCK_SUPPORTED := true
 USE_PIXEL_CHARGING := true
 TARGET_INCLUDE_CARRIER_SETTINGS := true
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
