@@ -6,8 +6,8 @@
 # Core Partitions
 /dev/block/platform/bootdevice/by-name/system     /system     ext4     ro                                                 wait,avb=vbmeta,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
 /dev/block/platform/bootdevice/by-name/vendor     /vendor     ext4     ro                                                 wait,avb=vbmeta,first_stage_mount
-/dev/block/platform/bootdevice/by-name/userdata   /data       ext4     noatime,nosuid,nodev,noauto_da_alloc,errors=panic,inlinecrypt wait,check,formattable,quota,latemount,resize,reservedsize=128m,fileencryption=aes-256-xts:aes-256-cts:v1
-/dev/block/platform/bootdevice/by-name/userdata     /data                    f2fs     noatime,nosuid,nodev,discard,flush_merge,reserve_root=134217,resgid=1065,alloc_mode=reuse,fsync_mode=nobarrier,inlinecrypt wait,check,formattable,quota,latemount,reservedsize=128m,fileencryption=aes-256-xts:aes-256-cts:v1
+/dev/block/platform/bootdevice/by-name/userdata   /data       ext4     noatime,nosuid,nodev,noauto_da_alloc,errors=panic,inlinecrypt wait,check,formattable,quota,latemount,resize,reservedsize=128m,fileencryption=aes-256-xts:aes-256-cts:v1,readahead_size_kb=128
+/dev/block/platform/bootdevice/by-name/userdata     /data                    f2fs     noatime,nosuid,nodev,discard,flush_merge,reserve_root=134217,resgid=1065,alloc_mode=reuse,fsync_mode=nobarrier,inlinecrypt wait,check,formattable,quota,latemount,reservedsize=128m,fileencryption=aes-256-xts:aes-256-cts:v1,readahead_size_kb=128
 /dev/block/platform/bootdevice/by-name/metadata /metadata ext4 noatime,nosuid,nodev,discard wait,check,formattable,first_stage_mount
 /dev/block/platform/bootdevice/by-name/cache      /cache      ext4     noatime,nosuid,nodev,noauto_da_alloc,discard       wait,check,formattable
 /dev/block/platform/bootdevice/by-name/recovery   /recovery   emmc     defaults     first_stage_mount,nofail
@@ -18,7 +18,7 @@
 
 # External-Devices (SDCARD | OTG)
 /devices/platform/externdevice*                  auto       auto   defaults    voldmanaged=sdcard1:auto,encryptable=userdata
-/devices/platform/usb3_xhci*                     auto       vfat   defaults    voldmanaged=usbotg:auto
+/devices/platform/usb3_xhci*                     auto       auto   defaults    voldmanaged=usbotg:auto
 
 # Factory Reset Protection (FRP)
 /dev/block/platform/bootdevice/by-name/frp      /persistent emmc   defaults    defaults
@@ -59,4 +59,4 @@
 /dev/block/platform/bootdevice/by-name/cam_vpu3 /cam_vpu3   emmc   defaults    defaults
 
 # ZRAM - Compressed RAM based Block Device (SWAP)
-/dev/block/zram0                                none        swap   defaults    zramsize=2147483648,max_comp_streams=8,zram_backingdev_size=512M
+/dev/block/zram0                                none        swap   defaults    zramsize=55%,max_comp_streams=8,zram_backingdev_size=512M
