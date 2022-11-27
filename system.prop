@@ -55,6 +55,7 @@ ro.vendor.whitepoint_calibration_enable=false
 vendor.displayfeature.entry.enable=true
 vendor.displayfeature_hidl=true
 debug.force_no_blanking=true
+debug.sf.enable_enable_hwc_vds=0
 
 # Graphics
 ro.opengles.version=196610
