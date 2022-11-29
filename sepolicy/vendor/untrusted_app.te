@@ -3,3 +3,6 @@ allow untrusted_app app_data_file:fifo_file unlink;
 # Chrome
 allow untrusted_app zygote:unix_stream_socket { getopt getattr };
 get_prop(untrusted_app, vendor_debug_prop)
+
+# Allow untrusted_app to get debug_mtk_gpud_prop
+get_prop(untrusted_app, debug_mtk_gpud_prop)

@@ -30,7 +30,6 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     debug.mediatek.disp_decompress=1 \
     debug.mediatek.game_pq_enable=1 \
     debug.mtk_tflite.target_nnapi=29 \
-    debug.renderengine.backend=skiaglthreaded \
     debug.sf.disable_client_composition_cache=1 \
     debug.sf.enable_gl_backpressure=1 \
     debug.sf.auto_latch_unsignaled=true \

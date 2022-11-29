@@ -4,3 +4,6 @@ allow system_app sysfs_zram:file r_file_perms;
 # FM Radio
 get_prop(system_app, wmt_prop)
 get_prop(system_app, mtk_default_prop)
+
+# Allow system_app to get debug_mtk_gpud_prop
+get_prop(system_app, debug_mtk_gpud_prop)

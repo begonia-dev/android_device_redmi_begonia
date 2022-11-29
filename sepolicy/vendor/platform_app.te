@@ -1,3 +1,4 @@
 allow platform_app sysfs_fpsinfo:file rw_file_perms;
 allow platform_app sysfs_thermal:dir r_dir_perms;
 allow platform_app sysfs_thermal:file r_file_perms;
+get_prop(platform_app, debug_mtk_gpud_prop)
