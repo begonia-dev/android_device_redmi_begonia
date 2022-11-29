@@ -74,6 +74,41 @@ persist.vendor.ims.disableDebugLogs=1
 persist.vendor.ims.disableIMSLogs=1
 persist.vendor.ims.disableQXDMLogs=1
 
+# Disable logging build.prop ver.
+ro.kernel.android.checkjni=0
+ro.config.htc.nocheckin=1
+logcat.live=disable
+ro.kernel.checkjni=0
+ro.config.nocheckin=1
+debug.systemui.latency_tracking=0
+persist.sample.eyetracking.log=0
+ro.com.google.locationfeatures=0
+ro.com.google.networklocation=0
+media.metrics.enabled=0
+sys.debug.watchdog=0
+logd.statistics=0
+media.metrics=0
+config.stats=0
+persist.sys.loglevel=0
+sys.log.app=0
+logd.statistics=0
+persist.sample.eyetracking.log=0
+debug.atrace.tags.enableflags=0
+debugtool.anrhistory=0
+profiler.debugmonitor=false
+profiler.launch=false
+profiler.hung.dumpdobugreport=false
+trustkernel.log.state=disable
+debug.mdpcomp.logs=0
+debug.atrace.tags.enableflags=0
+pm.sleep_mode=1
+profiler.force_disable_ulog=true
+profiler.force_disable_err_rpt=true
+ro.logd.size.stats=0
+debug.atrace.tags.enableflags=0
+persist.service.pcsync.enable=0
+persist.service.lgospd.enable=0
+
 # Kernel
 ro.kernel.zio=38,108,105,16
 
