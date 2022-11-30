@@ -8,5 +8,10 @@ get_prop(system_app, mtk_default_prop)
 # Allow system_app to get debug_mtk_gpud_prop
 get_prop(system_app, debug_mtk_gpud_prop)
 
+<<<<<<< HEAD
 # Allow system app to read /proc/pagetypeinfo
 allow system_app proc_pagetypeinfo:file r_file_perms;
+=======
+# Adress misc denials
+allow system_app zygote:unix_stream_socket { getopt };
+>>>>>>> 0baecac (begonia: sepolicy: Address more denials)

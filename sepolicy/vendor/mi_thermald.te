@@ -25,6 +25,7 @@ allow mi_thermald {
   sysfs_therm
   sysfs_thermal
   sysfs_power_supply
+  sysfs_battery_supply
   sysfs_devices_system_cpu
 }:{
   file

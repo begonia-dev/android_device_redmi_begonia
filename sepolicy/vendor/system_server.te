@@ -1,2 +1,5 @@
 # Last kernel
 allow system_server proc_last_kmsg:file r_file_perms;
+
+# Allow system_server to read debug_mtk_gpud_prop
+get_prop(system_server, debug_mtk_gpud_prop)

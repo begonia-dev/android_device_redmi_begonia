@@ -6,3 +6,6 @@ get_prop(gmscore_app, render_prop)
 
 # Silent harmless sepolicy
 dontaudit gmscore_app hal_memtrack_hwservice:hwservice_manager find;
+
+# Allow gmscore_app to get debug_mtk_gpud_prop
+get_prop(gmscore_app, debug_mtk_gpud_prop)

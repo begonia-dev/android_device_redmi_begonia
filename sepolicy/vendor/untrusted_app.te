@@ -4,5 +4,15 @@ allow untrusted_app app_data_file:fifo_file unlink;
 allow untrusted_app zygote:unix_stream_socket { getopt getattr };
 get_prop(untrusted_app, vendor_debug_prop)
 
-# Allow untrusted_app to get debug_mtk_gpud_prop
+# Allow untrusted_app* to get debug_mtk_gpud_prop
 get_prop(untrusted_app, debug_mtk_gpud_prop)
+
+get_prop(untrusted_app_27, debug_mtk_gpud_prop)
+get_prop(untrusted_app_29, debug_mtk_gpud_prop)
+get_prop(untrusted_app_30, debug_mtk_gpud_prop)
+
+# Adress misc denials
+allow untrusted_app shell_test_data_file:dir { search };
+allow untrusted_app_27 zygote:unix_stream_socket { getopt };
+allow untrusted_app_29 zygote:unix_stream_socket { getopt };
+allow untrusted_app_30 zygote:unix_stream_socket { getopt };
