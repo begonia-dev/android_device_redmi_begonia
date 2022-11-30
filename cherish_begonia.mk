@@ -33,7 +33,7 @@ TARGET_SCREEN_WIDTH := 1080
 USE_PIXEL_CHARGING := true
 TARGET_INCLUDE_CARRIER_SETTINGS := true
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.cherish.maintainer=decoder
+    ro.cherish.maintainer= decoder
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := begonia

@@ -33,100 +33,36 @@
         </path>
        <!-- 2-in-1 speaker output-->
         <path name="two_in_one_speaker_output" value="turnon">
-            <!--  ALPS05007528 begin -->
-            <kctl name="RCV_AMP_MODE" value="RECIEVER_MODE" />
-            <kctl name="DAC In Mux" value="Normal Path" />
-            <kctl name="RCV Mux" value="Voice Playback" />
-            <kctl name="Ext_Reciver_Amp Switch" value="1" />
-            <!--  ALPS05007528 end -->
         </path>
         <path name="two_in_one_speaker_output" value="turnoff">
-            <!--  ALPS05007528 begin -->
-            <kctl name="Ext_Reciver_Amp Switch" value="0" />
-            <kctl name="RCV Mux" value="Open" />
-            <kctl name="RCV_AMP_MODE" value="SPEAKER_MODE" />
-            <!--  ALPS05007528 end -->
         </path>
        <!--speaker output-->
         <path name="speaker_output" value="turnon">
-            <kctl name="RCV_AMP_MODE" value="SPEAKER_MODE" />
             <kctl name="DAC In Mux" value="Normal Path" />
             <kctl name="LOL Mux" value="Playback" />
-            <!--  ALPS05007528 begin -->
-            <kctl name="RCV Mux" value="Voice Playback" />
-            <!--  ALPS05007528 end -->
         </path>
         <path name="speaker_output" value="turnoff">
             <kctl name="LOL Mux" value="Open" />
-            <!--  ALPS05007528 begin -->
-            <kctl name="RCV Mux" value="Open" />
-            <!--  ALPS05007528 end -->
         </path>
-        <!--  ALPS05007528 begin -->
-        <path name="speaker_output_mode_fm" value="setting">
-            <kctl name="SPK_AMP_MODE" value="FM_MODE" />
-            <kctl name="RCV_AMP_MODE" value="FM_MODE" />
-        </path>
-        <path name="speaker_output_mode_rcv" value="setting">
-            <kctl name="SPK_AMP_MODE" value="RECIEVER_MODE" />
-            <kctl name="RCV_AMP_MODE" value="RECIEVER_MODE" />
-        </path>
-        <path name="speaker_output_mode_music" value="setting">
-            <kctl name="SPK_AMP_MODE" value="SPEAKER_MODE" />
-            <kctl name="RCV_AMP_MODE" value="SPEAKER_MODE" />
-        </path>
-        <path name="speaker_output_mode_voice" value="setting">
-            <kctl name="SPK_AMP_MODE" value="VOICE_MODE" />
-            <kctl name="RCV_AMP_MODE" value="VOICE_MODE" />
-        </path>
-        <!--  ALPS05007528 end -->
         <!--headhpone_speaker output-->
         <path name="headphoneSpeaker_output" value="turnon">
-            <kctl name="SPK_AMP_MODE" value="SPEAKER_MODE" />
-            <kctl name="RCV_AMP_MODE" value="SPEAKER_MODE" />
             <kctl name="DAC In Mux" value="Normal Path" />
-            <!--  ALPS05007528 begin -->
-            <kctl name="HPL Mux" value="LoudSPK Playback" />
-            <kctl name="HPR Mux" value="LoudSPK Playback" />
-            <!--  ALPS05007528 end -->
+            <kctl name="HPL Mux" value="Audio Playback" />
+            <kctl name="HPR Mux" value="Audio Playback" />
+            <kctl name="LOL Mux" value="Playback" />
         </path>
         <path name="headphoneSpeaker_output" value="turnoff">
             <kctl name="HPL Mux" value="Open" />
             <kctl name="HPR Mux" value="Open" />
-            <!--  ALPS05007528 begin -->
-            <!-- <kctl name="LOL Mux" value="Open" /> -->
-            <!--  ALPS05007528 end -->
+            <kctl name="LOL Mux" value="Open" />
         </path>
         <!--external_speaker output-->
         <path name="ext_speaker_output" value="turnon">
             <kctl name="Ext_Speaker_Amp Switch" value="1" />
-            <!--  ALPS05007528 begin -->
-            <kctl name="Ext_Reciver_Amp Switch" value="1" />
-            <!--  ALPS05007528 end -->
         </path>
         <path name="ext_speaker_output" value="turnoff">
             <kctl name="Ext_Speaker_Amp Switch" value="0" />
-            <!--  ALPS05007528 begin -->
-            <kctl name="Ext_Reciver_Amp Switch" value="0" />
-            <!--  ALPS05007528 end -->
         </path>
-        <path name="ext_speaker_output_left" value="turnon">
-            <kctl name="Ext_Speaker_Amp Switch" value="0" />
-            <kctl name="Ext_Reciver_Amp Switch" value="1" />
-        </path>
-        <path name="ext_speaker_output_left" value="turnoff">
-            <kctl name="Ext_Speaker_Amp Switch" value="0" />
-            <kctl name="Ext_Reciver_Amp Switch" value="0" />
-        </path>
-        <path name="ext_speaker_output_right" value="turnon">
-            <kctl name="Ext_Speaker_Amp Switch" value="1" />
-            <kctl name="Ext_Reciver_Amp Switch" value="0" />
-        </path>
-        <path name="ext_speaker_output_right" value="turnoff">
-            <kctl name="Ext_Speaker_Amp Switch" value="0" />
-            <kctl name="Ext_Reciver_Amp Switch" value="0" />
-        </path>
-	
         <!--external_headphone_amp switch-->
         <path name="ext_headphone_output" value="turnon">
             <kctl name="Ext_Headphone_Amp_Switch" value="1" />
