@@ -42,7 +42,7 @@ void property_override(char const prop[], char const value[])
 
 void load_device_properties() {
     // Override build fingerprint
-    property_override("ro.build.fingerprint", "google/cheetah/cheetah:13/TD1A.221105.001/9104446:user/release-keys");
+    property_override("ro.build.fingerprint", "google/cheetah/cheetah:13/TQ1A.221205.011/9244662:user/release-keys");
 
     // Override safety props
     property_override("ro.oem_unlock_supported", "0");
