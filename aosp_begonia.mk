@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021 The cherishOS Project
+# Copyright (C) 2021 The aospOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -16,7 +16,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 $(call inherit-product, device/redmi/begonia/device.mk)
 
 # Inherit some common riceDroid stuff
-$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 TARGET_SUPPORTS_QUICK_TAP := true
 
 
@@ -28,16 +28,19 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Boot Animation
-TARGET_SCREEN_HEIGHT := 2340
-TARGET_SCREEN_WIDTH := 1080
-USE_PIXEL_CHARGING := true
-TARGET_INCLUDE_CARRIER_SETTINGS := true
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.cherish.maintainer= decoder
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+TARGET_SUPPORTS_QUICK_TAP  := true
+TARGET_USES_MINI_GAPPS := false
+
+# VoidUI Maintainer Flags
+VOID_MAINTAINER := DECODER
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := begonia
-PRODUCT_NAME := cherish_begonia
+PRODUCT_NAME := aosp_begonia
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := Redmi Note 8 Pro
 PRODUCT_MANUFACTURER := Xiaomi

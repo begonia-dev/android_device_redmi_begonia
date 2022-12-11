@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/cherish_begonia.mk
+    $(LOCAL_DIR)/aosp_begonia.mk
 
 COMMON_LUNCH_CHOICES := \
-    cherish_begonia-user \
-    cherish_begonia-userdebug \
-    cherish_begonia-eng
+    aosp_begonia-user \
+    aosp_begonia-userdebug \
+    aosp_begonia-eng
