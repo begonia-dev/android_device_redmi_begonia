@@ -318,11 +318,11 @@
     <!-- The bounding path of the cutout region of the main built-in display.
          Must either be empty if there is no cutout region, or a string that is parsable by
          {@link android.util.PathParser}.
-    
+
          The path is assumed to be specified in display coordinates with pixel units and in
          the display's native orientation, with the origin of the coordinate system at the
          center top of the display.
-    
+
          To facilitate writing device-independent emulation overlays, the marker `@dp` can be
          appended after the path string to interpret coordinates in dp instead of px units.
          Note that a physical cutout should be configured in pixels for the best results.
@@ -505,10 +505,10 @@
 
     <!-- True if Unprocessed audio source supports the required frequency range and level -->
     <bool name="config_supportAudioSourceUnprocessed">true</bool>
-    
+
     <!-- Remove Mtk Ims app from privacy (location) indicators -->
     <string name="config_systemAudioIntelligence" translatable="false">com.mediatek.ims</string>
-    
+
     <!-- Whether WiFi display is supported by this device.
          There are many prerequisites for this feature to work correctly.
          Here are a few of them:
@@ -607,4 +607,13 @@
         <item>com.google.android.gms/com.google.android.gms.nearby.discovery.service.DiscoveryService</item>
         <item>com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService</item>
     </string-array>
+
+    <!-- System Info -->
+    <bool name="config_supportSystemInfo">true</bool>
+    <string name="config_sysCPUTemp">/sys/devices/virtual/thermal/thermal_zone4/temp</string>
+    <string name="config_sysBatteryTemp">/sys/class/power_supply/battery/temp</string>
+    <string name="config_sysGPUFreq">/sys/kernel/gpu/gpu_clock</string>
+    <string name="config_sysGPULoad">/sys/kernel/gpu/gpu_busy</string>
+    <integer name="config_sysCPUTempMultiplier">1000</integer>
+    <integer name="config_sysBatteryTempMultiplier">10</integer>
 </resources>
