@@ -1,4 +1,4 @@
-# Unpinned blobs from begonia-user 11 RP1A.200720.011 V12.5.8.0.RGGMIXM release-keys
+# Unpinned blobs from begonia-user 11 RP1A.200720.011 V12.5.15.0.RGGEUXM release-keys
 
 # Audio
 vendor/firmware/tfa98xx.cnt
