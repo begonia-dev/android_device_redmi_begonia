@@ -11,7 +11,7 @@ get_prop(untrusted_app_27, debug_mtk_gpud_prop)
 get_prop(untrusted_app_29, debug_mtk_gpud_prop)
 get_prop(untrusted_app_30, debug_mtk_gpud_prop)
 
-# Adress misc denials
+# Address misc denials
 allow untrusted_app shell_test_data_file:dir { search };
 allow untrusted_app_27 zygote:unix_stream_socket { getopt };
 allow untrusted_app_29 zygote:unix_stream_socket { getopt };

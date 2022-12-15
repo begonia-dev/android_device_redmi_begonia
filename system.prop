@@ -25,8 +25,6 @@ ro.camera.sound.forced=0
 persist.camera.HAL3.enabled=1
 persist.camera.eis.enabled=1
 persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera,com.google.camera
-vendor.camera.aux.packageblacklist=org.telegram.messenger,com.microsoft.teams,com.discord
-vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.google.camera
 
 # Charger
 ro.charger.enable_suspend=true
@@ -37,7 +35,6 @@ ro.product.charger.unplugged_shutdown_time=1000
 # Dex
 persist.bg.dexopt.enable=true
 dalvik.vm.dexopt.secondary=true
-pm.dexopt.install=speed-profile
 pm.dexopt.bg-dexopt=speed-profile
 pm.dexopt.boot=verify
 pm.dexopt.first-boot=quicken
@@ -74,41 +71,6 @@ persist.vendor.ims.disableADBLogs=1
 persist.vendor.ims.disableDebugLogs=1
 persist.vendor.ims.disableIMSLogs=1
 persist.vendor.ims.disableQXDMLogs=1
-
-# Disable logging build.prop ver.
-ro.kernel.android.checkjni=0
-ro.config.htc.nocheckin=1
-logcat.live=disable
-ro.kernel.checkjni=0
-ro.config.nocheckin=1
-debug.systemui.latency_tracking=0
-persist.sample.eyetracking.log=0
-ro.com.google.locationfeatures=0
-ro.com.google.networklocation=0
-media.metrics.enabled=0
-sys.debug.watchdog=0
-logd.statistics=0
-media.metrics=0
-config.stats=0
-persist.sys.loglevel=0
-sys.log.app=0
-logd.statistics=0
-persist.sample.eyetracking.log=0
-debug.atrace.tags.enableflags=0
-debugtool.anrhistory=0
-profiler.debugmonitor=false
-profiler.launch=false
-profiler.hung.dumpdobugreport=false
-trustkernel.log.state=disable
-debug.mdpcomp.logs=0
-debug.atrace.tags.enableflags=0
-pm.sleep_mode=1
-profiler.force_disable_ulog=true
-profiler.force_disable_err_rpt=true
-ro.logd.size.stats=0
-debug.atrace.tags.enableflags=0
-persist.service.pcsync.enable=0
-persist.service.lgospd.enable=0
 
 # Kernel
 ro.kernel.zio=38,108,105,16

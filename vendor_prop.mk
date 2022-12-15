@@ -48,7 +48,6 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     drm.service.enabled=true \
     init.userspace_reboot.is_supported=true \
     media.stagefright.thumbnail.prefer_hw_codecs=true \
-    sys.fflag.override.settings_enable_monitor_phantom_procs=false \
     persist.adb.nonblocking_ffs=0 \
     persist.audio.button_jack.profile=volume \
     persist.audio.button_jack.switch=0 \

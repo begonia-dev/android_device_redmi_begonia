@@ -6,5 +6,5 @@ allow priv_app sysfs_thermal:dir r_dir_perms;
 # Allow priv_app to get debug_mtk_gpud_prop
 get_prop(priv_app, debug_mtk_gpud_prop)
 
-# Adress misc denials
+# Address misc denials
 allow priv_app zygote:unix_stream_socket { getopt };
