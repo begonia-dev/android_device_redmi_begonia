@@ -766,7 +766,6 @@ vendor/bin/hw/vendor.mediatek.hardware.gpu@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.mms@1.5-service
 vendor/bin/hw/android.hardware.media.omx@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.mtkcodecservice@1.1-service
-vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
 vendor/bin/hw/vendor.mediatek.hardware.nwk_opt@1.0-service
 vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service
@@ -778,8 +777,6 @@ vendor/etc/init/vendor.mediatek.hardware.gpu@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.mms@1.5-service.rc
 vendor/etc/init/android.hardware.media.omx@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.mtkcodecservice@1.1-service.rc
-vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-init.rc
-vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.nvram@1.1-sevice.rc
 vendor/etc/init/vendor.mediatek.hardware.nwk_opt@1.0-service.rc
 vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
@@ -789,7 +786,6 @@ vendor/etc/permissions/com.mediatek.hardware.vow_dsp.xml
 vendor/lib/hw/vendor.mediatek.hardware.dfps@1.0-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.mms@1.5-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.mtkcodecservice@1.1-impl.so
-vendor/lib/hw/vendor.mediatek.hardware.mtkpower@1.1-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.pq@2.6-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
@@ -853,7 +849,6 @@ vendor/lib64/hw/android.hardware.sensors@1.0-impl-mediatek.so
 vendor/lib64/hw/vendor.mediatek.hardware.dfps@1.0-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.mms@1.5-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.mtkcodecservice@1.1-impl.so
-vendor/lib64/hw/vendor.mediatek.hardware.mtkpower@1.1-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.pq@2.6-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
@@ -1098,8 +1093,6 @@ lib64/libpowerkeeper_jni.so
 system_ext/lib64/vendor.mediatek.hardware.power@2.0.so
 system_ext/lib64/vendor.mediatek.hardware.power@2.1.so
 -vendor/etc/vintf/manifest/power-default.xml
-vendor/lib/hw/power.mt6785.so
-vendor/lib64/hw/power.mt6785.so
 
 # Radio
 vendor/lib/libvsim.so
@@ -1283,8 +1276,6 @@ system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.vpu@1.0.so
 vendor/bin/hw/mfp-daemon
 vendor/bin/hw/mtkfusionrild
-vendor/bin/hw/power_native_test_v_1_0
-vendor/bin/hw/power_native_test_v_1_1
 vendor/bin/hw/vtservice_hidl
 vendor/bin/atci_service
 vendor/bin/atcid
@@ -1878,7 +1869,6 @@ vendor/lib/libjpeg-alpha_vendor.so
 vendor/lib/libladder.so
 vendor/lib/liblogwrap_vendor.so
 vendor/lib/libminiui.so
-vendor/lib/libmmprofile.so
 vendor/lib/libmnetlink_v104.so
 vendor/lib/libmnl.so
 vendor/lib/libmp4enc_sa.ca7.so
@@ -1895,10 +1885,7 @@ vendor/lib/libnvram_daemon_callback.so
 vendor/lib/libnvram_platform.so
 vendor/lib/libnvram_sec.so
 vendor/lib/libnwk_opt_halwrap_vendor.so
-vendor/lib/libperfctl_vendor.so
 vendor/lib/libpixelflinger.so
-vendor/lib/libpowerhal.so
-vendor/lib/libpowerhalwrap_vendor.so
 vendor/lib/libpq_cust_base.so
 vendor/lib/libpq_prot.so
 vendor/lib/librgbwlightsensor.so
@@ -2093,7 +2080,6 @@ vendor/lib64/liblogwrap_vendor.so
 vendor/lib64/liblpcnr.so
 vendor/lib64/libmfllcore.so
 vendor/lib64/libminiui.so
-vendor/lib64/libmmprofile.so
 vendor/lib64/libmnetlink_v104.so
 vendor/lib64/libmsbc_mtk.so
 vendor/lib64/libmtcloader.so
@@ -2110,10 +2096,7 @@ vendor/lib64/libnvram_daemon_callback.so
 vendor/lib64/libnvram_platform.so
 vendor/lib64/libnvram_sec.so
 vendor/lib64/libnwk_opt_halwrap_vendor.so
-vendor/lib64/libperfctl_vendor.so
 vendor/lib64/libpixelflinger.so
-vendor/lib64/libpowerhal.so
-vendor/lib64/libpowerhalwrap_vendor.so
 vendor/lib64/libpq_cust_base.so
 vendor/lib64/libpq_prot.so
 vendor/lib64/libratconfig.so
