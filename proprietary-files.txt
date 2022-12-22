@@ -816,7 +816,6 @@ vendor/lib/libmtkcutils.so
 vendor/lib/libmtkhardware_legacy.so
 vendor/lib/libmtklimiter_vendor.so
 vendor/lib/libmtknetutils.so
-vendor/lib/libmtkperf_client_vendor.so
 vendor/lib/libmtkproperty.so
 vendor/lib/libmtkrillog.so
 vendor/lib/libmtkshifter_vendor.so
@@ -917,7 +916,6 @@ vendor/lib64/libmtkcutils.so
 vendor/lib64/libmtkhardware_legacy.so
 vendor/lib64/libmtklimiter_vendor.so
 vendor/lib64/libmtknetutils.so
-vendor/lib64/libmtkperf_client_vendor.so
 vendor/lib64/libmtkproperty.so
 vendor/lib64/libmtkrillog.so
 vendor/lib64/libmtkrilutils.so
@@ -1001,7 +999,6 @@ lib/libimsma_socketwrapper.so
 lib/libmtk_vt_service.so
 lib/libmtk_vt_wrapper.so
 lib/libmtkavenhancements.so
-lib/libmtkperf_client.so
 lib/libsignal.so
 lib/libsink.so
 lib/libsource.so
@@ -1010,7 +1007,6 @@ lib/libvcodec_capenc.so
 lib/libvt_avsync.so
 lib64/libmtk_vt_wrapper.so
 lib64/libmtkavenhancements.so
-lib64/libmtkperf_client.so
 lib64/libvcodec_cap.so
 lib64/libvcodec_capenc.so
 -priv-app/ImsService/ImsService.apk|fa68d61dadc5e2ebac6b56e7c3527855f3d7f8b1
