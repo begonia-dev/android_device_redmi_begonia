@@ -32,6 +32,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     debug.mtk_tflite.target_nnapi=29 \
     debug.hwui.skia_atrace_enabled=false \
     debug.sf.disable_client_composition_cache=1 \
+    debug.sf.enable_egl_image_tracker=1 \
     debug.sf.enable_gl_backpressure=1 \
     debug.sf.latch_unsignaled=1 \
     debug.sf.early.app.duration=24000000 \
