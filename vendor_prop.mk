@@ -478,7 +478,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.has_HDR_display=true \
     ro.surface_flinger.has_wide_color_display=true \
     persist.sys.sf.color_saturation=1.1 \
-    persist.sys.sf.color_mode=9 \
+    persist.sys.sf.color_mode=0 \
     persist.sys.sf.native_mode=2
 
 # Zygote
