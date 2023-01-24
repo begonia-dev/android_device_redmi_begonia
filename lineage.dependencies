@@ -4,11 +4,15 @@
     "target_path": "kernel/xiaomi/mt6785",
   },
   {
-    "repository" : "vendor_redmi_begonia",
+    "repository" : "android_hardware_mediatek",
+    "target_path": "hardware/mediatek"
+  },
+  {
+    "repository" : "android_vendor_redmi_begonia",
     "target_path": "vendor/redmi/begonia"
   },
   {
-    "repository" : "vendor_redmi_begonia-ims",
+    "repository" : "android_vendor_redmi_begonia-ims",
     "target_path": "vendor/redmi/begonia-ims"
   },
   {
