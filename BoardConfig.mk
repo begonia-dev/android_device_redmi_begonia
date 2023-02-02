@@ -145,5 +145,8 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/public
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 
+# Vibrator
+TARGET_VIBRATOR_SUPPORTS_EFFECTS := true
+
 # Inherit from the proprietary version
 include vendor/redmi/begonia/BoardConfigVendor.mk

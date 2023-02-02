@@ -1,4 +1,0 @@
-service vendor.vibrator-begonia /vendor/bin/hw/android.hardware.vibrator-service.begonia
-    class hal
-    user system
-    group system
