@@ -83,9 +83,6 @@ function blob_fixup {
         vendor/lib64/hw/vendor.mediatek.hardware.pq@2.6-impl.so)
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v30.so" "${2}"
             ;;
-        vendor/bin/hw/android.hardware.vibrator-service.mediatek)
-            "${PATCHELF}" --replace-needed "android.hardware.vibrator-V1-ndk_platform.so" "android.hardware.vibrator-V1-ndk.so" "${2}"
-            ;;
         vendor/bin/hw/android.hardware.thermal@2.0-service.mtk)
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
             ;;
