@@ -32,14 +32,16 @@ vendor/lib64/libaudiotoolkit_vendor.so
 # Audio-Hardware
 system_ext/lib/vendor.mediatek.hardware.audio@6.1.so
 system_ext/lib64/vendor.mediatek.hardware.audio@6.1.so
-vendor/lib/hw/audio.primary.mt6785.so
-vendor/lib/hw/audio.r_submix.mt6785.so
-vendor/lib/hw/audio.usb.mt6785.so
 vendor/lib/vendor.mediatek.hardware.audio@6.1.so
 vendor/lib64/hw/audio.primary.mt6785.so
 vendor/lib64/hw/audio.r_submix.mt6785.so
 vendor/lib64/hw/audio.usb.mt6785.so
 vendor/lib64/vendor.mediatek.hardware.audio@6.1.so
+
+# Audio Hardware - from mtk android-13.0.0_r16
+vendor/lib/hw/audio.primary.mt6785.so|f51ba0df90f3e74d51cef8c041eab4308d77c31c
+vendor/lib/hw/audio.r_submix.mt6785.so|ce142652e98bbe95ab09b2d0073825cfe6984f98
+vendor/lib/hw/audio.usb.mt6785.so|280239974813303ad03963d4f528fcb14d1c2138
 
 # Bluetooth
 system_ext/lib/vendor.mediatek.hardware.bluetooth.audio@2.1.so
