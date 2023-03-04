@@ -983,7 +983,6 @@ vendor/lib64/libem_camera_jni.so|904c222b39f4a18e1843d68ce65a805d99b89c1a
 
 # MTK-IMS
 bin/vtservice
-etc/apns-conf.xml:product/etc/apns-conf.xml
 etc/init/init.vtservice.rc
 lib/libcomutils.so
 lib/libimsma.so
