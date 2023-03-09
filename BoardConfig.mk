@@ -111,6 +111,11 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 TARGET_COPY_OUT_PRODUCT := system/product
 TARGET_COPY_OUT_SYSTEM_EXT := system/system_ext
+TARGET_COPY_OUT_VENDOR := vendor
+
+# Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
@@ -134,9 +139,7 @@ ODM_MANIFEST_SKUS += \
 
 ODM_MANIFEST_BEGONIA_FILES := $(DEVICE_PATH)/manifest_begonia.xml
 
-# Treble
-TARGET_COPY_OUT_VENDOR := vendor
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+# VNDK
 PRODUCT_VENDOR_MOVE_ENABLED := true
 
 # Sepolicy

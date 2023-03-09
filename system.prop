@@ -1,6 +1,5 @@
 # Audio
 ro.audio.silent=0
-audio.deep_buffer.media=false
 ro.config.vc_call_vol_steps=7
 ro.config.media_vol_steps=15
 
@@ -11,49 +10,14 @@ persist.sys.sf.disable_blurs=1
 Build.BRAND=MTK
 
 # Camera
-ro.camera.sensor.id_rear=0
-ro.camera.sensor.id_front=1
-ro.camera.sensor.highres.0=[[9248:6936:33:0],[9280:6944:32:1]]
-ro.camera.sensor.highres.1=[[5184:3880:33:0],[5184:2920:33:0],[5184:2392:33:0],[3888:3888:33:0]]
-ro.camera.sensor.highres.0.max=9280:6944
 ro.camera.sound.forced=0
-persist.camera.HAL3.enabled=1
-persist.camera.eis.enabled=1
-persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera,com.google.camera
 
 # Charger
 ro.charger.enable_suspend=true
 persist.vendor.quick.charge=1
 
-# Dex
-persist.bg.dexopt.enable=true
-dalvik.vm.dexopt.secondary=true
-pm.dexopt.install=speed-profile
-pm.dexopt.bg-dexopt=speed-profile
-pm.dexopt.boot=verify
-pm.dexopt.first-boot=quicken
-dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5
-dalvik.vm.dex2oat64.enabled=true
-dalvik.vm.dex2oat-threads=6
-
-# Display
-ro.vendor.all_modes.colorpick_adjust=true
-ro.vendor.cabc.enable=true
-ro.vendor.colorpick_adjust=true
-ro.vendor.histogram.enable=false
-ro.vendor.xiaomi.bl.poll=true
-ro.vendor.whitepoint_calibration_enable=false
-vendor.displayfeature.entry.enable=true
-vendor.displayfeature_hidl=true
-
 # Graphics
 ro.opengles.version=196610
-
-# IPO
-sys.ipo.disable=1
-
-# Keys
-qemu.hw.mainkeys=0
 
 # Kernel
 ro.kernel.zio=38,108,105,16

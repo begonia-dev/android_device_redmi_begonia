@@ -237,7 +237,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
 
 # Properties
--include $(LOCAL_PATH)/vendor_prop.mk
+-include $(LOCAL_PATH)/vendor_logtag.mk
 
 # Public Libraries
 PRODUCT_COPY_FILES += \
@@ -314,9 +314,6 @@ PRODUCT_PACKAGES += \
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0.vendor
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.sys.thermal.data.path=/data/vendor/thermal/
 
 # Trust
 PRODUCT_PACKAGES += \
