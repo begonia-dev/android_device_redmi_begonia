@@ -472,7 +472,7 @@ on post-fs-data
 
     # FM Radio device node
     chmod 0660 /dev/fm
-    chown media media /dev/fm
+    chown system system /dev/fm
 
     # device info /proc interface
     chmod 0440 /dev/devmap
