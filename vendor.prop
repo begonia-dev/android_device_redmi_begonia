@@ -168,6 +168,9 @@ ro.surface_flinger.running_without_sync_framework=true
 ro.surface_flinger.uclamp.min=130
 
 # IMS
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
 persist.vendor.ims_support=1
 persist.vendor.md_c2k_cap_dep_check=0
 persist.vendor.mims_support=2
