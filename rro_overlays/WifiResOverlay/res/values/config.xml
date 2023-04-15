@@ -20,6 +20,54 @@
 <!-- These resources are around just to allow their values to be customized
      for different hardware and product builds.  Do not translate. -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Do not translate. Default access point SSID used for tethering -->
+
+    <!-- boolean indicating whether the WiFi chipset has 5GHz band support.
+         Note: This config is replacing the config_wifi_dual_band_support
+         since more bands may now be supported (such as 6GHz), the naming dual_band
+         is no longer indicative, and a separate config now exists for each band -->
+    <bool name="config_wifi5ghzSupport">true</bool>
+
+    <!-- Boolean indicating whether 802.11r Fast BSS Transition is enabled on this platform -->
+    <bool name="config_wifi_fast_bss_transition_enabled">true</bool>
+
+    <!-- Indicates that p2p MAC randomization is supported on this device -->
+    <bool name="config_wifi_p2p_mac_randomization_supported">true</bool>
+
+    <!-- Wifi driver supports Automatic channel selection (ACS) for softap -->
+    <bool name="config_wifi_softap_acs_supported">true</bool>
+
+    <!-- Wifi driver supports IEEE80211AC for softap -->
+    <bool name="config_wifi_softap_ieee80211ac_supported">true</bool>
+
+    <!-- Wifi driver supports WPA3 Simultaneous Authentication of Equals (WPA3-SAE) for softap -->
+    <bool name="config_wifi_softap_sae_supported">false</bool>
+
+    <!-- True if the firmware supports connected MAC randomization -->
+    <bool name="config_wifi_connected_mac_randomization_supported">true</bool>
+
+    <!-- Boolean indicating whether the wifi chipset has background scan support -->
+    <bool name="config_wifi_background_scan_support">true</bool>
+
+    <!-- Boolean indicating whether single radio chain scan results are to be used for network selection -->
+    <bool name="config_wifi_framework_use_single_radio_chain_scan_results_network_selection">false</bool>
+
+    <!-- Integer threshold, do not connect to APs with RSSI lower than the entry threshold -->
+    <integer translatable="false" name="config_wifi_framework_wifi_score_entry_rssi_threshold_5GHz">-85</integer>
+
+    <!-- Integer parameters of the wifi to cellular handover feature
+         wifi should not stick to bad networks -->
+    <integer name="config_wifi_framework_wifi_score_bad_rssi_threshold_24GHz">-85</integer>
+    <integer name="config_wifi_framework_wifi_score_bad_rssi_threshold_5GHz">-82</integer>
+    <integer name="config_wifi_framework_wifi_score_low_rssi_threshold_24GHz">-73</integer>
+    <integer name="config_wifi_framework_wifi_score_low_rssi_threshold_5GHz">-70</integer>
+
+    <!-- integer indicating additional disconnect delay (in ms) after IMS onLost() indication is received -->
+    <integer name="config_wifiDelayDisconnectOnImsLostMs">1000</integer>
+
+    <!-- Configure wifi tcp buffersizes in the form:
+         rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
+    <string name="config_wifi_tcp_buffers">1730560,3461120,6922240,524288,1048576,4525824</string>
+
+    <!-- Default access point SSID used for tethering -->
     <string name="wifi_tether_configure_ssid_default" translatable="false">Redmi Note 8 Pro</string>
 </resources>
