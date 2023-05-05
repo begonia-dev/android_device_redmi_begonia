@@ -3,5 +3,3 @@ get_prop(vendor_init, persist_recovery_update_prop)
 get_prop(vendor_init, vts_status_prop)
 
 allow vendor_init { fingerprint_data_file vendor_fingerprint_data_file }:dir { rw_dir_perms relabelto setattr };
-
-set_prop(vendor_init, vendor_power_prop)
