@@ -941,7 +941,7 @@ service mi_thermald /vendor/bin/mi_thermald
     group system
     seclabel u:r:mi_thermald:s0
 
-service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.1-service
+service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service
     override
     class hal
     user nfc
