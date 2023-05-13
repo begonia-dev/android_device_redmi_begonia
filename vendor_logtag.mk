@@ -4,7 +4,7 @@ else
 VENDOR_LOG_LEVEL=S
 endif
 
-PRODUCT_PROPERTY_OVERRIDES +=  \
+PRODUCT_VENDOR_PROPERTIES +=  \
     persist.log.tag.AT=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.AdnRecord=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.AdnRecordCache=$(VENDOR_LOG_LEVEL) \
