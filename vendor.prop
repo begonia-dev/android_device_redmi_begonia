@@ -140,7 +140,6 @@ ro.vendor.mtk_wappush_support=1
 # Graphics
 debug.hwui.skia_atrace_enabled=false
 debug.sf.disable_client_composition_cache=1
-debug.sf.enable_gl_backpressure=1
 debug.sf.enable_transaction_tracing=false
 debug.sf.latch_unsignaled=1
 debug.sf.early.app.duration=24000000
