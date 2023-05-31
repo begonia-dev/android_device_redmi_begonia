@@ -1,8 +1,8 @@
 # Graphics
-genfscon sysfs /devices/platform/13040000.mali                                                                                  u:object_r:sysfs_mali:s0
-genfscon sysfs /devices/platform/13040000.mali/dma_buf_gpu_mem u:object_r:sysfs_mali:s0
-genfscon sysfs /devices/platform/13040000.mali/kprcs u:object_r:sysfs_mali:s0
-genfscon sysfs /devices/platform/13040000.mali/total_gpu_mem u:object_r:sysfs_mali:s0
+genfscon sysfs /devices/platform/13040000.mali                                                                                  u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/13040000.mali/dma_buf_gpu_mem u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/13040000.mali/kprcs u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/13040000.mali/total_gpu_mem u:object_r:sysfs_gpu:s0
 
 # Last kernel
 genfscon proc /last_kmsg u:object_r:proc_last_kmsg:s0
