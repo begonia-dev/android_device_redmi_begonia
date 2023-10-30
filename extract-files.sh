@@ -92,6 +92,13 @@ function blob_fixup {
         vendor/bin/hw/android.hardware.thermal@2.0-service.mtk)
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
             ;;
+        vendor/bin/mnld)
+            ;&
+        vendor/lib64/libaalservice.so)
+            ;&
+        vendor/lib64/libcam.utils.sensorprovider.so)
+            "${PATCHELF}" --replace-needed "libsensorndkbridge.so" "libsensorndkbridge-v30.so" "${2}"
+            ;;
     esac
 }
 
