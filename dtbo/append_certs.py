@@ -12,7 +12,7 @@ def padding_file(input_file, align_num):
     if padding != 0:
         padding = align_num - padding
         for _ in range(padding):
-            file1.write("\x00")
+            file1.write(b"\x00")
     file1.close()
 
 
