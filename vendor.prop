@@ -8,6 +8,9 @@ ro.vendor.mtk_nn_quant_preferred=1
 ro.vendor.mtk_nn_support=1
 vendor.audio.adm.buffering.ms=3
 
+# APK Verity
+ro.apk_verity.mode=2
+
 # Audio
 aaudio.mmap_exclusive_policy=2
 aaudio.mmap_policy=2
