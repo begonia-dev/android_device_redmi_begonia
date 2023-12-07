@@ -1088,11 +1088,9 @@ vendor/lib/libvsim.so
 
 # Sensors
 vendor/lib/hw/sensors.touch.so
-vendor/lib/libsensorndkbridge.so:vendor/lib/libsensorndkbridge-v30.so
 vendor/lib/libssccalapi.so
 vendor/lib64/hw/sensors.mt6785.so
 vendor/lib64/hw/sensors.touch.so
-vendor/lib64/libsensorndkbridge.so:vendor/lib64/libsensorndkbridge-v30.so
 vendor/lib64/libsensor_custom.so
 vendor/lib64/libssccalapi.so
 
