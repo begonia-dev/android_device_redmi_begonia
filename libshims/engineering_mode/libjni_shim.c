@@ -1,0 +1,1 @@
+void _ZN7android21SurfaceComposerClient23getInternalDisplayTokenEv() {}
